@@ -1,0 +1,22 @@
+{
+  "name": "loki_1b",
+  "version": "1.0.0",
+  "description": "project untuk matkul PWEB B",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FathihAlfi/Loki_1B.git"
+  },
+  "author": "Nanda, Fathih, Icad, Bian, Angga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FathihAlfi/Loki_1B/issues"
+  },
+  "homepage": "https://github.com/FathihAlfi/Loki_1B#readme",
+  "dependencies": {
+    "express.js": "^1.0.0"
+  }
+}
