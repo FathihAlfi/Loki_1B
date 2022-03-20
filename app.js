@@ -43,3 +43,5 @@ server.listen(port, () =>
     console.log(`Server sudah berjalan di port ${port}`)
 })
 
+console.log('haii bestie nyoba doaang')
+
