@@ -10,7 +10,7 @@ server.get('/', (req, res) =>
 })
 
 //fungsional ke1
-server.post('/sign up' , (req, res) => 
+server.post('/signup' , (req, res) => 
 {
     res.send(`Silahkan daftar `)
 })
