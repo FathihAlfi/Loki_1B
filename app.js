@@ -23,7 +23,7 @@ server.get('/', (req, res) =>
 })
 
 //fungsional ke20
-server.get('/pertmingguan/hapus', (req, res) => 
+server.delete('/pertmingguan/hapus', (req, res) => 
 {
     res.send(`Berhasil menghapus RPS minggunan`)
 })
