@@ -9,7 +9,7 @@ server.get('/', (req, res) =>
     res.send('Hello, ini adalah halaman home kami')
 })
 
-//fungsional ke1
+//fungsional 1
 server.post('/signup' , (req, res) => 
 {
     res.send(`Silahkan daftar `)
@@ -19,20 +19,20 @@ server.get('/login', (req, res) =>
     res.send(`Berhasil login`)
 })
 
-//fungsional ke2
+//fungsional 2
 server.get('/logout', (req, res) => 
 {
     res.send(`Berhasil logout`)
 })
 
-//fungsional ke3
+//fungsional 3
 server.put('/rps/edit/:edit', (req, res) => 
 {
     var edit = req.params.edit
     res.send(`Silahkan memperbaharui RPS ${edit}`)
 })
 
-//fungsional ke4
+//fungsional 4
 server.post('/rps/view', (req, res) => 
 {
     var view = req.query.view
@@ -46,38 +46,38 @@ server.post('/rps/view', (req, res) =>
     }
 })
 
-//fungsional ke5
+//fungsional 5
 server.get('/rps/print', (req, res) => 
 {
     res.send(`RPS berhasil dicetak`)
 })
 
 
-//Dosen dapat menambahkan RPS baru
+//fungsional 6
 server.post('/dosen-nambah-rps', (req, res) =>
 {
     res.send("rps berhasil ditambahkan")
 })
 
-//Dosen dapat mengubah rps
+//fungsional 7
 server.put('/dosen-ubah-rps', (req, res) =>
 {
     res.send("rps berhasil diubah")
 })
 
-//Dosen dapat merevisi rps
+//fungsional 8
 server.put('/dosen-revisi-rps', (req, res) =>
 {
     res.send("revisi gagal, rps masih kosong")
 })
 
-//Dosen dapat menambah CPMK mata kuliah
+//fungsional 9
 server.post('/dosen-nambah-cpmk', (req, res) =>
 {
     res.send("cpmk berhasil ditambahkan")
 })
 
-//Dosen dapat mengubah CPMK mata kuliah
+//fungsional 10
 server.put('/dosen-ubah-cpmk', (req, res) =>
 {
     res.send("cpmk berhasil diubah")
@@ -116,34 +116,34 @@ server.post('/komponen/tambah/:komponen', (req, res) =>
     res.send(`Masukkan Data Komponen Nilai, anda telah menambah komponen ${komponen}`)
 })
 
-//fungsional16
+//fungsional 16
 server.put("/edit", function(req,res){
     res.send("Mengubah Komponen Nilai")
 })
 
-//fungsional17
+//fungsional 17
 server.delete("/delete", function(req,res){
     res.send("Menghapus Komponen Penilaian")
 })
 
-//fungsional18
-server.put("/add", function(req,res){
+//fungsional 18
+server.post("/add", function(req,res){
     res.send("Menambah Pertemuan Mingguan RPS")
 })
 
-//fungsional19
+//fungsional 19
 server.put("/change", function(req,res){
     res.send("Mengubah Pertemuan Mingguan RPS")
 })
 
-//fungsional ke20
+//fungsional 20
 server.get('/pertmingguan/hapus', (req, res) => 
 {
     res.send(`Berhasil menghapus RPS minggunan`)
     //test
 })
 
-//fungsional ke21
+//fungsional 21
 server.get('/cari', (req, res) => 
 {
     var kode = req.query.kode
@@ -152,13 +152,13 @@ server.get('/cari', (req, res) =>
     res.send(`Anda mencari mata kuliah ${nama} dengan kode ${kode}`)    
 })
 
-//fungsional ke22
+//fungsional 22
 server.get('/lihat', (req, res) =>
 {
     res.send('Anda sedang melihat file RPS, tapi gaada filenya')
 })
 
-//fungsional ke23
+//fungsional 23
 server.get('/export', (req, res) => 
 {
     var file = req.query.file
@@ -170,4 +170,3 @@ server.listen(port, () =>
 {
     console.log(`Server sudah berjalan di port ${port}`)
 })
-
