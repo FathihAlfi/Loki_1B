@@ -52,10 +52,6 @@ server.get('/rps/print', (req, res) =>
     res.send(`RPS berhasil dicetak`)
 })
 
-server.listen(port, () =>
-{
-    console.log(`server sudah berjalan di port ${port}`)
-})
 
 //Dosen dapat menambahkan RPS baru
 server.post('/dosen-nambah-rps', (req, res) =>
