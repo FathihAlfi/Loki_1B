@@ -1,4 +1,3 @@
-const { query } = require('express')
 const express = require('express')
 const client = express()
 const port = 8889
@@ -10,6 +9,10 @@ client.get('/', (req, res) =>
 })
 
 //fungsional ke1
+client.post('/sign up' , (req, res) => 
+{
+    res.send(`Silahkan daftar `)
+})
 client.get('/login', (req, res) => 
 {
     res.send(`Berhasil login`)
@@ -22,14 +25,14 @@ client.get('/logout', (req, res) =>
 })
 
 //fungsional ke3
-client.get('/rps/edit/:edit', (req, res) => 
+client.put('/rps/edit/:edit', (req, res) => 
 {
     var edit = req.params.edit
     res.send(`Silahkan memperbaharui RPS ${edit}`)
 })
 
 //fungsional ke4
-client.get('/rps/view', (req, res) => 
+client.post('/rps/view', (req, res) => 
 {
     var view = req.query.view
     if (!view)
