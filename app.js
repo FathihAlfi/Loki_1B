@@ -1,4 +1,5 @@
 console.log ('SELAMAT MENGERJAKAN SEMOGA A NI ANJAY');
+//testt
 
 const express = require('express')
 const server = express()
@@ -7,6 +8,7 @@ const port = 8000
 
 const dataa = require("./fileJSON/RPS.json")
 server.use(express.json())
+
 
 server.get('/', (req, res) => 
 {
