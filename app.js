@@ -144,6 +144,7 @@ server.put("/change", function(req,res){
 server.get('/pertmingguan/hapus', (req, res) => 
 {
     res.send(`Berhasil menghapus RPS minggunan`)
+    //test
 })
 
 //fungsional ke21
