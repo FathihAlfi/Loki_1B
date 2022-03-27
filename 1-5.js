@@ -1,4 +1,3 @@
-const { query } = require('express')
 const express = require('express')
 const client = express()
 const port = 8889
