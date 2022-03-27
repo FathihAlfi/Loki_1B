@@ -13,23 +13,42 @@ server.get('/', (req, res) =>
 server.post('/signup' , (req, res) => 
 {
     res.send(`Silahkan daftar `)
+    const signup= {
+        "messagge" : "Signup berhasil",
+        "code_error" : 200
+      }
+      res.json(signup)
+
 })
 server.get('/login', (req, res) => 
 {
-    res.send(`Berhasil login`)
+    const login = {
+        "messagge" : "Berhasil login",
+        "code_error" : 200
+      }
+      res.json(login)
+
 })
 
 //fungsional 2
 server.get('/logout', (req, res) => 
 {
-    res.send(`Berhasil logout`)
+    const logout = {
+        "messagge" : "Berhasil logout",
+        "code_error" : 200
+      }
+      res.json(logout);
 })
 
 //fungsional 3
 server.put('/rps/edit/:edit', (req, res) => 
 {
     var edit = req.params.edit
-    res.send(`Silahkan memperbaharui RPS ${edit}`)
+    const editt = {
+        "messagge" : "Silahkan memperbaharui RPS",
+        "code_error" : 200
+      }
+      res.json(editt);
 })
 
 //fungsional 4
@@ -38,18 +57,30 @@ server.post('/rps/view', (req, res) =>
     var view = req.query.view
     if (!view)
     {
-        res.send(`RPS yang diambil`)
+        const vieww = {
+            "messagge" : "RPS yang diambil",
+            "code_error" : 200
+          }
+          res.json(vieww);
     }
     else
     {
-        res.send(`Anda sedang melihat rps ${view}`)
+        const vieww = {
+            "messagge" : "Anda sedang melihat rps",
+            "code_error" : 200
+          }
+          res.json(vieww)
     }
 })
 
 //fungsional 5
 server.get('/rps/print', (req, res) => 
 {
-    res.send(`RPS berhasil dicetak`)
+    const print = {
+        "messagge" : "RPS berhasil dicetak",
+        "code_error" : 200
+      }
+      res.json(print);
 })
 
 
