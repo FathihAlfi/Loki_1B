@@ -2,11 +2,24 @@ console.log ('SELAMAT MENGERJAKAN SEMOGA A NI ANJAY');
 
 const express = require('express')
 const server = express()
+const FileSystem = require("fs")
 const port = 8000
+
+const dataa = require("./fileJSON/RPS.json")
+server.use(express.json())
 
 server.get('/', (req, res) => 
 {
-    res.send('Hello, ini adalah halaman home kami')
+    // res.send('Hello, ini adalah halaman home kami')
+    FileSystem.readFile("./fileJSON/RPS.json", "utf8", (err, data) => {
+        if (err)
+        {
+            console.log(`File read failed: ${err}`)
+            return
+        }
+        console.log(`file data : ${data}`)
+        res.status(200).send(dataa);
+    })
 })
 
 //fungsional ke20
@@ -31,7 +44,7 @@ server.get('/lihat', (req, res) =>
 })
 
 //fungsional ke23
-server.get('/export', (req, res) => 
+server.post('/export', (req, res) => 
 {
     var file = req.query.file
     

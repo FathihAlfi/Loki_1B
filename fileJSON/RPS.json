@@ -1,0 +1,17 @@
+{
+    "PWEB" : 
+        [
+            {"kode"     : "JSI001"},
+            {"sks"      : 3},
+            {"semester" : "4"},
+            {"dosen"    : "Budi"},
+            
+            {"CPPS"       :
+                [
+                    
+                ]
+            }
+
+        
+        ]
+}
