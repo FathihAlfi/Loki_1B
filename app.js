@@ -10,7 +10,7 @@ server.get('/', (req, res) =>
 })
 
 //fungsional ke1
-server.post('/sign up' , (req, res) => 
+server.post('/signup' , (req, res) => 
 {
     res.send(`Silahkan daftar `)
 })
@@ -140,6 +140,7 @@ server.put("/change", function(req,res){
 server.get('/pertmingguan/hapus', (req, res) => 
 {
     res.send(`Berhasil menghapus RPS minggunan`)
+    //test
 })
 
 //fungsional ke21

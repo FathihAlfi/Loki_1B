@@ -17,7 +17,7 @@ server.delete("/delete", function(req,res){
 })
 
 //fungsional18
-server.put("/add", function(req,res){
+server.post("/add", function(req,res){
     res.send("Menambah Pertemuan Mingguan RPS")
 })
 
