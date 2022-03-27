@@ -117,23 +117,39 @@ server.post('/komponen/tambah/:komponen', (req, res) =>
 })
 
 //fungsional 16
-server.put("/edit", function(req,res){
-    res.send("Mengubah Komponen Nilai")
+server.put('/edit/nilai', function(req,res){
+    const ubahNilai = data.komponen_penilaian.find(c => c.id === req.params.id);
+    ubahNilai.persentase = req.body.persentase
+    res.json(ubahNilai);
 })
 
 //fungsional 17
-server.delete("/delete", function(req,res){
-    res.send("Menghapus Komponen Penilaian")
+server.delete('/delete/nilai', function(req,res){
+    const hapusNilai = data.komponen_penilaian.find(c => c.id === req.params.id);
+    const index = data.komponen_penilaian.indexOf(hapusNilai);
+    data.komponen_penilaian.splice(index,1);
+    res.json(hapusNilai);
 })
 
 //fungsional 18
-server.post("/add", function(req,res){
-    res.send("Menambah Pertemuan Mingguan RPS")
+server.post('/add/RPS', function(req,res){
+    const rps = {
+        id_rps : data.rps.length + 1,
+        matkul : req.body.matkul,
+        nip : req.body.nip,
+        nama_dosen : req.body.nama_dosen
+    }
+    data.rps.push(rps);
+    res.json(data.rps);
 })
 
 //fungsional 19
-server.put("/change", function(req,res){
-    res.send("Mengubah Pertemuan Mingguan RPS")
+server.put("/change/RPS", function(req,res){
+    const ubah_rps = data.rps.find(c => c.id_rps === parseInt (req.params.id));
+    ubah_rps.matkul = req.body.matkul;
+    ubah_rps.nip = req.body.nip;
+    ubah_rps.nama_dosen = req.body.nama_dosen;
+    res.json(ubah_rps);
 })
 
 //fungsional 20
