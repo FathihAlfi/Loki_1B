@@ -186,7 +186,12 @@ server.put("/change/RPS", function(req,res){
 //fungsional 20
 server.get('/pertmingguan/hapus', (req, res) => 
 {
-    res.send(`Berhasil menghapus RPS minggunan`)
+    const hapus = {
+        "message"   : "Berhasil menghapus RPS minggunan",
+        "code_error": "200"
+    }
+    res.json(hapus)
+    // res.send(`Berhasil menghapus RPS minggunan`)
     //test
 })
 
@@ -196,12 +201,23 @@ server.get('/cari', (req, res) =>
     var kode = req.query.kode
     var nama = req.query.nama
 
-    res.send(`Anda mencari mata kuliah ${nama} dengan kode ${kode}`)    
+    const cari = {
+        "kode"  : kode,
+        "nama"  : nama
+    }
+
+    res.json(cari)
+    // res.send(`Anda mencari mata kuliah ${nama} dengan kode ${kode}`)    
 })
 
 //fungsional 22
 server.get('/lihat', (req, res) =>
 {
+    const lihat = {
+        "message"   : "Anda sedang melihat RPS",
+        "code_error": "200"
+    }
+    res.json(lihat)
     res.send('Anda sedang melihat file RPS, tapi gaada filenya')
 })
 
@@ -209,8 +225,10 @@ server.get('/lihat', (req, res) =>
 server.get('/export', (req, res) => 
 {
     var file = req.query.file
-    
-    res.send(`Anda akan meng-eksport data ${file}`)
+    const jsonya = "./filejson/RPS.json"
+    res.send(jsonya)
+
+    // res.send(`Anda akan meng-eksport data ${file}`)
 })
 
 server.listen(port, () =>
