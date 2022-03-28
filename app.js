@@ -185,7 +185,6 @@ server.post('/komponen/tambah/:komponen', (req, res) =>
     }
     res.json(addedd);
 })
-})
 
 //fungsional 16
 server.put('/edit/nilai', function(req,res){
