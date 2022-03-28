@@ -136,34 +136,55 @@ server.put('/dosen-ubah-cpmk', (req, res) =>
 //fungsional 11
 server.delete('/cpmk/hapus', (req, res) =>
 {
-    res.send("masukkan data yang ingin dihapus")
+    const deleted = {
+        "messagge" : "CPMK berhasil dihapus",
+        "code_error" : 200 
+    }
+    res.json(deleted);
+    
 })
 
 //fungsional 12
 server.post('/referensi/tambah', (req, res) =>
 {
-    res.send("Masukkan Data Referensi")
+    const added = {
+        "messagge" : "Referensi berhasil ditambah",
+        "code_error" : 200 
+    }
+    res.json(added);
 })
 
 //fungsional 13
 server.put('/referensi/ubah', (req, res) =>
 {
-    res.send("Masukkan Data yang ingin diubah")
+    const changed = {
+        "messagge" : "Referensi berhasil ubah",
+        "code_error" : 200 
+    }
+    res.json(changed);
 })
 
 //fungsional 14
 server.delete('/referensi/hapus', (req, res) =>
 {
-    
-    res.send("Masukkan Data yang ingin dihapus")
+    const deletedd = {
+        "messagge" : "Referensi berhasil dihapus",
+        "code_error" : 200 
+    }
+    res.json(deletedd);
 })
 
 //fungsional 15
 server.post('/komponen/tambah/:komponen', (req, res) =>
 {
     var komponen = req.params.komponen
-    
-    res.send(`Masukkan Data Komponen Nilai, anda telah menambah komponen ${komponen}`)
+   
+    const addedd = {
+        "messagge" : " Masukkan Data Komponen Nilai, anda telah menambah komponen",
+        "code_error" : 200 
+    }
+    res.json(addedd);
+})
 })
 
 //fungsional 16
