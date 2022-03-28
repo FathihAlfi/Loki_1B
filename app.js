@@ -87,31 +87,50 @@ server.get('/rps/print', (req, res) =>
 //fungsional 6
 server.post('/dosen-nambah-rps', (req, res) =>
 {
-    res.send("rps berhasil ditambahkan")
+    const add = {
+        "messagge" : "RPS berhasil ditambahkan",
+        "code_error" : 200
+      }
+      res.json(add);
 })
-
 //fungsional 7
 server.put('/dosen-ubah-rps', (req, res) =>
 {
-    res.send("rps berhasil diubah")
+    const change = {
+        "messagge" : "RPS berhasil diubah",
+        "code_error" : 200
+      }
+      res.json(change);
 })
 
 //fungsional 8
 server.put('/dosen-revisi-rps', (req, res) =>
 {
-    res.send("revisi gagal, rps masih kosong")
+    const revision = {
+        "messagge" : "RPS berhasil direvisi",
+        "code_error" : 200
+      }
+      res.json(revision);
 })
 
 //fungsional 9
 server.post('/dosen-nambah-cpmk', (req, res) =>
 {
-    res.send("cpmk berhasil ditambahkan")
+    const add = {
+        "messagge" : "CPMK berhasil ditambahkan",
+        "code_error" : 200
+      }
+      res.json(add);
 })
 
 //fungsional 10
 server.put('/dosen-ubah-cpmk', (req, res) =>
 {
-    res.send("cpmk berhasil diubah")
+    const change = {
+        "messagge" : "CPMK berhasil diubah",
+        "code_error" : 200
+      }
+      res.json(change);
 })
 
 //fungsional 11
@@ -200,7 +219,6 @@ server.get('/cari', (req, res) =>
 {
     var kode = req.query.kode
     var nama = req.query.nama
-
     const cari = {
         "kode"  : kode,
         "nama"  : nama
@@ -209,7 +227,7 @@ server.get('/cari', (req, res) =>
     res.json(cari)
     // res.send(`Anda mencari mata kuliah ${nama} dengan kode ${kode}`)    
 })
-
+    
 //fungsional 22
 server.get('/lihat', (req, res) =>
 {
