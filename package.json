@@ -18,6 +18,7 @@
   "homepage": "https://github.com/FathihAlfi/Loki_1B#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "express.js": "^1.0.0"
+    "express.js": "^1.0.0",
+    "sequelize": "^6.17.0"
   }
 }
