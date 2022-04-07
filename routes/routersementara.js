@@ -1,6 +1,7 @@
 const express = require('express')
-const server = express()
-const router = express.Router()
+const server = express.Router()
+const controllers = require('../controllers/users.js')
+// const router = express.Router()
 //const controller yang dibutuhkan
 
 //fungsional 1

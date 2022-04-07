@@ -6,21 +6,12 @@ controllers.getAllUser = async (req, res) => {
     res.status(200).send(users)
 }
 
-
-
 controllers.hello = async(req, res) => {
     res.status(200).send("Hello world!!!")
 }
 
 controllers.signup = async (req, res) => {
     res.status(200).send("Hello world!!! ini bagian signup")
-
-    // try {
-    //     const user = await model.findAll();
-    //     res.send(user);
-    // } catch (err) {
-    //     console.log(err);
-    // }
 }
 module.exports = controllers
 
