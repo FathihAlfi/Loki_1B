@@ -1,4 +1,4 @@
-const models = require('../models/index')
+const models = require('../../../models/index')
 const controllers = {}
 
 controllers.getAllUser = async (req, res) => {
