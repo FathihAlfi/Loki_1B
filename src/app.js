@@ -10,7 +10,7 @@ database.authenticate()
     console.log('Berhasil terhubung database');
   })
   .catch(err => {
-    console.error('Gagal terhubung :', err);
+    console.error(`Gagal terhubung : ${err}`);
   });
 
 app.use('/', server.user)
