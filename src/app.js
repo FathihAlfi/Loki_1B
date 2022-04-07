@@ -5,8 +5,7 @@ const app = express()
 const port = 8000
 const server = require('./routes/index.js')
 
-database
-  .authenticate()
+database.authenticate()
   .then(() => {
     console.log('Berhasil terhubung database');
   })
@@ -15,6 +14,7 @@ database
   });
 
 app.use('/', server.user)
+app.use('/', server.migrationstest)
 
 app.listen(port, () =>
 {
