@@ -1,3 +1,4 @@
+//dosen pengampu
 'use strict'
 const { Sequelize, DataTypes, err } = require('sequelize');
 const db = require('../config/database.js')

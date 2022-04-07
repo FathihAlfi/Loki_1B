@@ -18,4 +18,4 @@ var failed_jobs = db.define('failed_jobs', {
 })
 
 // user.removeAttribute('updatedAt', 'createdAt')
-module.exports= failed_jobs
+module.exports = failed_jobs
