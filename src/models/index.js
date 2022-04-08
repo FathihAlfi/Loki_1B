@@ -9,6 +9,11 @@ const permissions = require('./permissions.js')
 const password_resets = require('./password_resets.js')
 const model_has_permissions = require('./model_hal_permissions.js')
 const migrations = require('./migrations.js')
+const course_plan_lecturers = require('./course_plan_lecturers.js')
+const curriculum_los = require('./curriculum_los.js')
+const curricula = require('./curricula.js')
+const curriculum_profiles = require('./curriculum_profiles.js')
+const course_requirements = require('./course_requirements.js')
 
 const models = {}
 
@@ -23,5 +28,10 @@ models.permissions = permissions
 models.password_resets = password_resets
 models.model_has_permissions = model_has_permissions
 models.migrations = migrations
+models.course_plan_lecturers = course_plan_lecturers
+models.curriculum_los = curriculum_los
+models.curricula = curricula
+models.curriculum_profiles = curriculum_profiles
+models.course_requirements = course_requirements
 
 module.exports = models
