@@ -14,6 +14,11 @@ const curriculum_los = require('./curriculum_los.js')
 const curricula = require('./curricula.js')
 const curriculum_profiles = require('./curriculum_profiles.js')
 const course_requirements = require('./course_requirements.js')
+const course_plan_detail_outcomes = require('./course_plan_detail_outcomes.js')
+const course_plan_detail_refs = require('./course_plan_detail_refs.js')
+const course_plan_details = require('./course_plan_details.js')
+const course_plan_assessments = require('./course_plan_assessments.js')
+
 
 const models = {}
 
@@ -33,5 +38,11 @@ models.curriculum_los = curriculum_los
 models.curricula = curricula
 models.curriculum_profiles = curriculum_profiles
 models.course_requirements = course_requirements
+models.course_plan_detail_outcomes = course_plan_detail_outcomes
+models.course_plan_detail_refs = course_plan_detail_refs
+models.course_plan_details = course_plan_details
+models.course_plan_assessments = course_plan_assessments
+
+
 
 module.exports = models
