@@ -82,50 +82,50 @@ server.get('/rps/print', (req, res) =>
 //fungsional 6
 server.post('/dosen-nambah-rps', (req, res) =>
 {
-    const add = {
+    const addRPS = {
         "messagge" : "RPS berhasil ditambahkan",
         "code_error" : 200
       }
-      res.json(add);
+      res.json(addRPS);
 })
 //fungsional 7
 server.put('/dosen-ubah-rps', (req, res) =>
 {
-    const change = {
+    const changeRPS = {
         "messagge" : "RPS berhasil diubah",
         "code_error" : 200
       }
-      res.json(change);
+      res.json(changeRPS);
 })
 
 //fungsional 8
 server.put('/dosen-revisi-rps', (req, res) =>
 {
-    const revision = {
+    const revisionRPS = {
         "messagge" : "RPS berhasil direvisi",
         "code_error" : 200
       }
-      res.json(revision);
+      res.json(revisionRPS);
 })
 
 //fungsional 9
 server.post('/dosen-nambah-cpmk', (req, res) =>
 {
-    const add = {
+    const addCPMK = {
         "messagge" : "CPMK berhasil ditambahkan",
         "code_error" : 200
       }
-      res.json(add);
+      res.json(addCPMK);
 })
 
 //fungsional 10
 server.put('/dosen-ubah-cpmk', (req, res) =>
 {
-    const change = {
+    const changeCPMK = {
         "messagge" : "CPMK berhasil diubah",
         "code_error" : 200
       }
-      res.json(change);
+      res.json(changeCPMK);
 })
 
 //fungsional 11
