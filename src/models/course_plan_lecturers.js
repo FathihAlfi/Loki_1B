@@ -7,7 +7,7 @@ var course_plan_lecturers = db.define('coures_plan_lectures', {
         id : {
           type : DataTypes.BIGINT,
           allownull : false,
-          prymaryKey : true,
+          primaryKey : true,
           autoIncrement : true
         },
 

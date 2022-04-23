@@ -6,7 +6,7 @@ var course_requirements = db.define('course_requirements', {
     id : {
         type : DataTypes.BIGINT,
         allownull : false,
-        prymaryKey : true,
+        primaryKey : true,
         autoIncrement : true
     },
 

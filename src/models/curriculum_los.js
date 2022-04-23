@@ -6,7 +6,7 @@ var curriculum_los = db.define('curriculum_los', {
     id : {
         type : DataTypes.BIGINT,
         allownull : false,
-        prymaryKey : true,
+        primaryKey : true,
         autoIncrement : true
     },
 

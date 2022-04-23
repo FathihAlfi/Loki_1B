@@ -6,7 +6,7 @@ var curricula = db.define('curricula', {
     id : {
         type : DataTypes.BIGINT,
         allownull : false,
-        prymaryKey : true,
+        primaryKey : true,
         autoIncrement : true
     },
 

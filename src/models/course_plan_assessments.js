@@ -14,7 +14,7 @@ var course_plan_assessments = db.define ('course_plan_assessments', {
         allownull   : false
     },
     name : {
-        type        : DataTypes.varchar,
+        type        : DataTypes.STRING,
         allownull   : false
     },
     percentage : {
