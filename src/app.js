@@ -1,9 +1,16 @@
 console.log ('SELAMAT MENGERJAKAN SEMOGA A NI ANJAY');
 const database = require('./config/database.js')
+const bodyParser = require("body-parser");
 const express = require('express')
 const app = express()
 const port = 8000
 const server = require('./routes/index.js')
+const cookieParser = require('cookie-parser');
+require('dotenv').config()
+
+app.use(express.json())
+app.use(express.urlencoded({extended : true}))
+app.use(cookieParser())
 
 database.authenticate()
   .then(() => {
@@ -15,6 +22,8 @@ database.authenticate()
 
 app.use('/', server.user)
 app.use('/', server.migrationstest)
+app.use('/', server.auth)
+app.use('/', server.logout)
 
 app.listen(port, () =>
 {

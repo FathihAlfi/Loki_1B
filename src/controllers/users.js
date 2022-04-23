@@ -1,4 +1,6 @@
 const models = require('../models/index')
+const bcrypt = require('bcryptjs')
+
 const controllers = {}
 
 controllers.getAllUser = async (req, res) => {
@@ -10,22 +12,22 @@ controllers.hello = async(req, res) => {
     res.status(200).send("Hello world!!!")
 }
 
-controllers.signup = async (req, res) => {
-    res.status(200).send("Hello world!!! ini bagian signup")
+controllers.register = async(req, res) => {
+    const {nama, email, password, confPassword } = req.body;
+    if(password !== confPassword) return res.status(400).json({msg: "Password dan Confirm Password tidak cocok"});
+    const salt = await bcrypt.genSalt();
+    const hashPassword = await bcrypt.hash(password, salt);
+    try {
+        await models.user.create({
+            name: nama,
+            type : 'D',
+            email: email,
+            password: hashPassword,
+        });
+        res.json({msg: "Register Berhasil"});
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 module.exports = controllers
-
-// const express = require('express')
-// const user = require('../models/users.js')
-
-// const signup = async (req, res) => {
-//     try {
-//         const user = await user.findAll();
-//         res.send(product);
-//     } catch (err) {
-//         console.log(err);
-//     }
-// }
-
-// module.exports = controllers

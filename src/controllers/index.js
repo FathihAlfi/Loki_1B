@@ -5,6 +5,7 @@ const failed_jobs = require('./failed_jobs.js')
 const lecturers = require('./lecturers.js')
 const course_plan_references = require('./course_plan_references.js')
 const migrationstest = require('./migrationstest.js')
+const auth = require('./auth.js')
 
 const controllers = {}
 controllers.user = user
@@ -14,5 +15,6 @@ controllers.failed_jobs = failed_jobs
 controllers.lecturers = lecturers
 controllers.course_plan_references = course_plan_references
 controllers.migratiosntest = migrationstest
+controllers.auth = auth
 
 module.exports = controllers
