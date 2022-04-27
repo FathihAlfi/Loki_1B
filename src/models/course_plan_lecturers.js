@@ -3,7 +3,7 @@
 const { Sequelize, DataTypes, err } = require('sequelize');
 const db = require('../config/database.js')
 
-var course_plan_lecturers = db.define('coures_plan_lectures', {
+var course_plan_lecturers = db.define('course_plan_lecturers', {
         id : {
           type : DataTypes.BIGINT,
           allownull : false,
