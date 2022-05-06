@@ -18,6 +18,7 @@ const course_plan_detail_outcomes = require('./course_plan_detail_outcomes.js')
 const course_plan_detail_refs = require('./course_plan_detail_refs.js')
 const course_plan_details = require('./course_plan_details.js')
 const course_plan_assessments = require('./course_plan_assessments.js')
+const course_plans = require('./course_plans.js')
 
 
 const models = {}
@@ -42,7 +43,7 @@ models.course_plan_detail_outcomes = course_plan_detail_outcomes
 models.course_plan_detail_refs = course_plan_detail_refs
 models.course_plan_details = course_plan_details
 models.course_plan_assessments = course_plan_assessments
-
+models.course_plans = course_plans
 
 
 module.exports = models

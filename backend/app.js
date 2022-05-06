@@ -25,6 +25,7 @@ app.use('/', server.migrationstest)
 app.use('/', server.auth)
 app.use('/', server.logout)
 app.use('/', server.RPS)
+app.use('/', server.dosen)
 
 app.listen(port, () =>
 {
