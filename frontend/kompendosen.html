@@ -1,72 +1,123 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title> Portal Akademik 1B </title>
-    </head>
-
-    <body>
-        <h1>Komponen Penilaian</h1>
-            <hr>
-        <p>Nama Dosen     : Husnil Kamil, MT.</p>
-        <p>NIP            : 198201182008121002</p>
-        <p>Tahun Akademik : 2021/2022</p>
-        <p>Semester       : Genap</p>
-            <br>
-        <table border="1" cellspacing="0">
-            <tr>
-                <td><b>No.</b></td>
-                <td><b>Kode Mata Kuliah</b></td>
-                <td><b>Mata Kuliah</b></td>
-                <td><b>SKS</b></td>
-                <td><b>Jadwal Kelas</b></td>
-                <td><b>Kelas</b></td>
-                <td><b>Jumlah Mahasiswa</b></td>
-                <td><b>Komponen Penilaian</b></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>JSI62125</td>
-                <td>Pemrograman Web/A</td>
-                <td>3</td>
-                <td>Senin/13.30-16.00</td>
-                <td>E.1.7</td>
-                <td>40</td>
-                <td><button type="Submit"> <a href="kompen1.html">Lihat</a></button></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>JSI62124</td>
-                <td>Pemrograman Web/B</td>
-                <td>3</td>
-                <td>Selasa/07.30-11.00</td>
-                <td>E.1.6</td>
-                <td>39</td>
-                <td><button type="Submit"> <a href="kompen2.html">Lihat</a></button></td>
-            </tr>
-		    <tr>
-                <td>3</td>
-                <td>JSI62123</td>
-                <td>Data Mining/A</td>
-                <td>3</td>
-                <td>Rabu/11.00-12.50</td>
-                <td>E.1.5</td>
-                <td>35</td>
-                <td><button type="Submit"> <a href="kompen3.html">Lihat</a></button></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>JSI62122</td>
-                <td>Data Mining/B</td>
-                <td>3</td>
-                <td>Senin/11.00-12.50</td>
-                <td>E.1.3</td>
-                <td>38</td>
-                <td><button type="Submit"> <a href="kompen4.html">Lihat</a></button></td>
-            </tr>
-        </table>
-		<br>
-            <br>
-        <p><a href="homepagedosen.html">Back</a></p>
-        <p><a href="mainlogin.html">Sign Out</a></p>
-    </body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal Akademik 1B</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/9c1321c239.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark shadow-md fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand"> PORTAL DOSEN | <b>UNIVERSITAS ANDALAS</b></a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-light" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <nav>
+        <div class="row no-gutters mt-5">
+            <div class="col-md-2 bg-light mt-2 pr-3 pt-4">
+                <ul class="nav flex-column ml-3 mb-5">
+                    <div class="mt-1 mb-2 d-block mx-auto" style="width: 50px">
+                      <img src="profil.png" class="img-fluid">
+                    </div>
+                    <h6 class="text-center fs-6">Husnil Kamil, M.T.</h6>
+                    <h6 class="text-center fs-6">NIP.198201182008121002</h6><hr>
+                    <li class="nav-item">
+                      <a class="nav-link active text-black" aria-current="page" href="homepagedosen.html"><i class="fa-solid fa-list me-2"></i>List RPS</a><hr>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-black" href="cpmk.html"><i class="fa-solid fa-map me-2"></i>CPMK</a><hr>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-black" href="refdosen.html"><i class="fa-solid fa-book-bookmark me-2"></i>Referensi</a><hr>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="jadwaldosen.html"><i class="fa-solid fa-calendar-days me-2"></i>Jadwal Pertemuan</a><hr>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="kompendosen.html"><i class="fa-solid fa-award me-2"></i>Komponen Nilai</a><hr>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="mainlogin.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Sign Out</a><hr>
+                    </li>
+            </div>
+            <div class="col-md-10 p-4 pt-4">
+                <h3><i class="fa-solid fa-award me-2"></i>Komponen Penilaian</h3><hr>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-2"><h6>Nama Dosen</h6></div>
+                        <div class="col-2"><h6>: Husnil Kamil,M.T.</h6></div>
+                      </div>
+                    <div class="row">
+                      <div class="col-2"><h6>NIP</h6></div>
+                      <div class="col-3"><h6>: 198201182008121002</h6></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"><h6>Tahun Ajaran</h6></div>
+                        <div class="col-3"><h6>: Genap 2021/2022</h6></div>
+                      </div><br>
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Masukkan Nama/Kode Mata Kuliah" aria-label="Search">
+                            <button class="btn btn-outline-dark" type="submit">Cari</button>
+                        </form><br>
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" scope="col">No.</th>
+                                    <th scope="col">Nama Mata Kuliah</th>
+                                    <th class="text-center" scope="col">Kode Mata Kuliah</th>
+                                    <th class="text-center" scope="col">Jumlah SKS</th>
+                                    <th class="text-center" scope="col">Jadwal Kelas</th>
+                                    <th class="text-center" scope="col">Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="text-center" scope="row">1</th>
+                                    <td>Pemrograman Web</td>
+                                    <td class="text-center">JSI62125</td>
+                                    <td>3</td>
+                                    <td class="text-center">Senin/13.30-16.00</td>
+                                    <td class="text-center"><a href="lihatkompen1.html"><i class="fas fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip" title="Edit"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center" scope="row">2</th>
+                                    <td>Data Mining</td>
+                                    <td class="text-center">JSI62122</td>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center">Rabu/07.30-10.00</td>
+                                    <td class="text-center"><a href="lihatkompen2.html"><i class="fas fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip" title="Edit"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center"scope="row">3</th>
+                                    <td >Pengantar Keamanan Informasi</td>
+                                    <td class="text-center">JSI62123</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">Jumat/07.30-09.10</td>
+                                    <td class="text-center"><a href="lihatkompen3.html"><i class="fas fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip" title="Edit"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center" scope="row">4</th>
+                                    <td>Perancangan Basis Data</td>
+                                    <td class="text-center">JSI62120</td>
+                                    <td class="text-center">4</td>
+                                    <td class="text-center">Selasa/13.30-17.20</div>
+                                    </td>
+                                    <td class="text-center"><a href="lihatkompen4.html"><i class="fas fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip" title="Edit"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><br>
+            </div>
+        </div>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
 </html>
