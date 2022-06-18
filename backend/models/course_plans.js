@@ -7,7 +7,7 @@ var course_plans = db.define('course_plans', {
         type            : DataTypes.BIGINT,
         allowNull       : false,
         primaryKey      : true,
-        autoIncreament  : true
+        autoIncrement   : true
     },
     course_id :  {
         type        : DataTypes.BIGINT,

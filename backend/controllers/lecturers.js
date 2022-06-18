@@ -1,47 +1,59 @@
 const models = require('../models/index')
+const jwt = require('jsonwebtoken')
+
 const controllers = {}
 
-controllers.hello = async(req, res) => {
-    res.status(200).send("Hello world!!! inilecturers")
-}
-
-controllers.tambahRPS = async (req, res) => {
-    //cek RPS 
-    const RPS = await models.course_plans.findOne({
+controllers.cekDosen = async (req, res) => {
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        return res.status(200).json("tidak ada token")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const creator = await models.user.findOne({
         where : {
-            id : req.body.course_id
+            email   : payload.email
         }
     })
-    if (RPS)
-        return res.status(200).json("Tidak dapat menambahkan RPS yang sudah tersedia")
-    const {course_id, code, name, alias_name, credit, semester, description} = req.body
-    try {
-        if (code == RPS.code || alias_name == RPS.alias_name)
-        await models.courses.create({
-            id              : course_id,
-            curriculum_id   : 1,
-            code            : code,
-            name            : name,
-            alias_name      : alias_name,
-            credit          : credit,
-            semester        : semester,
-            description     : description
-        })
-        await models.course_plans.create({
-            id              : course_id,
-            course_id       : course_id,
-            rev             : 0,
-            code            : code,
-            name            : name,
-            alias_name      : alias_name,
-            credit          : credit,
-            semester        : semester,
-            description     : description
-        })
-        res.json({msg: "Berhasil menambahkan RPS"});
-    } catch (err) {
-        console.log(err);
+    const nama = creator.name
+    const {Kode_Mata_Kuliah, NIP_dosen} = req.body
+    const dosen = await models.lecturers.findOne({
+        where : {
+            reg_id  : NIP_dosen
+        }
+    })
+}
+
+controllers.tambahDosen = async (req, res) => {
+    if(!controllers.cekDosen.dosen)
+        return res.status(200).json("NIP dosen salah")
+    try 
+    {
+        await models.course_plan_lecturers.create({
+            course_plan_lecturers_lecturer_id_foreign     : this.cekDosen.NIP_dosen,
+            course_plan_id  : this.cekDosen.Kode_Mata_Kuliah,
+            creator         : nama
+        });
+        res.json({msg: "Register Berhasil"});
+    } 
+    catch (error) 
+    {
+        console.log(error);
     }
+}
+
+controllers.cekDosenPengampu = async (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    if(token == null) 
+        return res.sendStatus(401);
+        
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
+        if(err) return res.sendStatus(403);
+            req.id      = decoded.id;
+            req.email   = decoded.email;
+            req.nama    = decoded.nama;
+            req.type    = decoded.type;
+        next();
+    })
 }
 
 module.exports = controllers

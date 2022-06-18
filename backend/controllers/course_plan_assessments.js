@@ -1,26 +1,21 @@
 const models = require('../models/index')
 const controllers = {}
 
-controllers.hello = async(req, res) => {
-    res.status(200).send("Hello world!!! ini coursea_plan_references")
-}
-
-controllers.tambahRef = async(req, res) => {
+controllers.tambahPenilaian = async(req, res) => {
     const matkul = await models.course_plans.findOne({
         where : {
             id : req.query.course_plan_id
         }
     })
     try {
-        const {id, title, author, publisher, year ,description} = req.body
+        const {id, name, percentage} = req.body
         await models.course_plan_references.create({
             id  : id,
             course_plan_id  : req.query.course_plan_id,
-            title           : title,
-            author          : author,
-            publisher       : publisher,
+            name            : name,
+            percentage      : percentage,
+            flag            : 0,
             year            : year,
-            description     : description
         })
         res.json({msg: "Berhasil menambahkan referensi mata kuliah"});
     } catch (err) {
@@ -28,21 +23,21 @@ controllers.tambahRef = async(req, res) => {
     }
 }
 
-controllers.hapusRef = async(req, res) => {
+controllers.editPenilaian = async(req, res) => {
+
+}
+
+controllers.hapusPenilaian = async(req, res) => {
     try {
-        const hapus = await models.course_plan_references.deleteOne({id   : id})
+        const hapus = await models.course_plan_assessments.deleteOne({id     : id})
         res.json({msg: "Referensi berhasil dihapus"});
     } catch (err) {
         console.log(err);
     }
 }
 
-controllers.updateRef = async(req, res) => {
-
-}
-
-controllers.lihatRef = async(req, res) => {
-
+controllers.lihatPenilaian = async(req, res) => {
+    
 }
 
 module.exports = controllers

@@ -9,7 +9,7 @@ controllers.getAllUser = async (req, res) => {
 }
 
 controllers.hello = async(req, res) => {
-    res.render("landingpage")
+    res.status(200).send("Hello world!!!")
 }
 
 controllers.register = async(req, res) => {

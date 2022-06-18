@@ -45,5 +45,12 @@ models.course_plan_details = course_plan_details
 models.course_plan_assessments = course_plan_assessments
 models.course_plans = course_plans
 
+course_plans.hasMany(course_plan_lecturers, {
+    foreignKey : 'course_plan_id', 
+    // onDelete : 'CASCADE',
+    // onUpdate : 'CASCADE'
+    })
+course_plan_lecturers.belongsTo(course_plans, {foreignKey : 'course_plan_id'})
+
 
 module.exports = models

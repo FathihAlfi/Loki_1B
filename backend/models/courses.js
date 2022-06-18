@@ -5,8 +5,9 @@ const db = require('../config/database.js')
 var courses = db.define('courses', {
     id : {
         type        : DataTypes.BIGINT,
-        allowNull   : false,
-        primaryKey  : true
+        allowNull       : false,
+        primaryKey      : true,
+        autoIncrement   : true
     },
     curriculum_id :  {
         type        : DataTypes.BIGINT,

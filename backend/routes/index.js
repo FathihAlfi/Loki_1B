@@ -4,6 +4,7 @@ const auth = require('./auth.js')
 const logout = require('./logout.js')
 const RPS = require('./RPS.js')
 const dosen = require('./dosen.js')
+const admin = require('./admin.js')
 
 const server = {}
 
@@ -13,5 +14,6 @@ server.auth = auth
 server.logout = logout
 server.RPS = RPS
 server.dosen = dosen
+server.admin = admin
 
 module.exports = server
