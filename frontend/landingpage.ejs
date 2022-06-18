@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal Akademik 1B</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9c1321c239.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark shadow-md fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Universitas Andalas</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+    </nav>
+
+    <nav>
+        <div class="card text-center col-md-10 pt-4 container-fluid">
+            <h3>Rencana Pembelajaran Semester</h3><hr>
+            <div class="card-body">
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Masukkan Nama/Kode Mata Kuliah" aria-label="Search">
+                <button class="btn btn-dark" type="submit">Cari</button>
+              </form>
+              <br>
+              <table class="table table-dark table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Fakultas</th>
+                        <th scope="col">Jurusan</th>
+                        <th scope="col">Nama Mata Kuliah</th>
+                        <th scope="col">Kode Mata Kuliah</th>
+                        <th scope="col">Jumlah SKS</th>
+                        <th scope="col">Lihat RPS</th>
+                        <th scope="col">Export</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Teknologi Informasi</td>
+                        <td>Sistem Informasi</td>
+                        <td>Pemrograman Web</td>
+                        <td>JSI62125</td>
+                        <td>3</td>
+                        <td><a href="rpspweblanding.html"><i class="fa-solid fa-eye p-2 text-white rounded" data-toggle="tooltip" title="Open"></i></a></td>
+                        <td><a href="exportrps.html"><i class="fa-solid fa-cloud-arrow-down p-2 text-white rounded" data-toggle="tooltip" title="Export"></i></a></td>
+                    </tr>
+                   
+                </tbody>
+              </table>
+              <p>Masuk Sebagai?</p>
+              <a href="mainlogin.html" class="btn btn-warning">Log In</a>
+            </div>
+            <div class="card-footer text-muted">
+              Portal Akademik Universitas Andalas
+            </div>
+        </div>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
