@@ -20,6 +20,9 @@ database.authenticate()
     console.error(`Gagal terhubung : ${err}`);
   });
 
+app.set("view engine", "ejs")
+app.use(express.static("views"))
+
 app.use('/', server.user)
 app.use('/', server.migrationstest)
 app.use('/', server.auth)
