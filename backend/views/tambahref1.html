@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal Akademik 1B</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/9c1321c239.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark shadow-md fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand">PORTAL DOSEN | <b>UNIVERSITAS ANDALAS</b></a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-light" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <nav>
+        <div class="row no-gutters mt-5">
+            <div class="col-md-2 bg-light mt-2 pr-3 pt-4">
+                <ul class="nav flex-column ml-3 mb-5">
+                    <div class="mt-1 mb-2 d-block mx-auto" style="width: 50px">
+                      <img src="profil.png" class="img-fluid">
+                    </div>
+                    <h6 class="text-center fs-6">Husnil Kamil, M.T.</h6>
+                    <h6 class="text-center fs-6">NIP.198201182008121002</h6><hr>
+                    <li class="nav-item">
+                      <a class="nav-link active text-black" aria-current="page" href="homepagedosen.html"><i class="fa-solid fa-list me-2"></i>List RPS</a><hr>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-black" href="cpmk.html"><i class="fa-solid fa-map me-2"></i>CPMK</a><hr>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-black" href="refdosen.html"><i class="fa-solid fa-book-bookmark me-2"></i>Referensi</a><hr>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="jadwaldosen.html"><i class="fa-solid fa-calendar-days me-2"></i>Jadwal Pertemuan</a><hr>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="kompendosen.html"><i class="fa-solid fa-award me-2"></i>Komponen Nilai</a><hr>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="mainlogin.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Sign Out</a><hr>
+                    </li>
+            </div>
+            <div class="col-md-10 p-4 pt-4">
+                <h3><i class="fas fa-plus-square me-2"></i>Tambah Referensi</h3><hr>
+                </form><br>
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center" scope="col">Nama Referensi/Buku</th>
+                            <th class="text-center" scope="col">Tahun</th>
+                           
+                        </tr>
+                        <tr>
+                            <th class="text-center"><input type="tambahref" id="inputtambahref" class="form-save text-center"></th>
+                            <th class="text-center"><input type="tambahref" id="inputtambahref" class="form-save text-center"></th>
+                            
+                        </tr>
+                    </thead>
+                </table>
+                <h5>Upload Detail Referensi</h5>
+               
+                <div>
+                    <button> <i class="fa-solid fa-file-import me-2"></i>Import file</button>
+                   
+                </div>
+                <br>
+                <form>
+                    <fieldset able>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="ableFieldsetCheck" able>
+                            <label class="form-check-label" for="ableFieldsetCheck">Saya telah mengisi seluruh data dengan benar.</label>
+                        </div>
+                        <a href="referensi1.html" class="btn btn-primary mb-3">Simpan</a>
+                        <a href="referensi1.html" class="btn btn-secondary mb-3">Kembali</a>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
