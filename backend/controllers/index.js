@@ -8,6 +8,7 @@ const migrationstest = require('./migrationstest.js')
 const auth = require('./auth.js')
 const RPS = require('./RPS')
 const mhs = require('./mhs.js')
+const dosen = require('./dosen.js')
 
 const controllers = {}
 
@@ -21,5 +22,6 @@ controllers.migratiosntest = migrationstest
 controllers.auth = auth
 controllers.RPS = RPS
 controllers.mhs = mhs
+controllers.dosen = dosen
 
 module.exports = controllers

@@ -31,16 +31,16 @@
                     <h1 class="card-title text-center">Portal Dosen</h1>
                 </div>
                 <div class="card-text">
-                    <form>
+                    <form action="/loginDosen" method="POST">
                         <div class="mb-3">
                           <label for="exampleInputNIP1" class="form-label">NIP</label>
-                          <input type="nip" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          <input type="text" name="NIP" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1">
+                          <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                         </div>
-                        <a href="homepagedosen.html">
+                        <a href="/homeDosen">
                             <button type="button" class="btn btn-dark">Log In</button>
                         </a>
                       </form>
