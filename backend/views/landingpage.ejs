@@ -41,9 +41,9 @@
                       </tr>
                   </thead>
                   <tbody>
-                    <% RPS.forEach(R => { %>
+                    <% RPS.forEach((R, i) => { %>
                       <tr>
-                          <th scope="row">1</th>
+                          <th scope="row"><%= i+1 %></th>
                           <td><%= R.name %></td>
                           <td><%= R.code %></td>
                           <td><%= R.credit %></td>

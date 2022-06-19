@@ -1,6 +1,7 @@
 const models = require('../models/index')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const cookieParser = require('cookie-parser')
 
 const controllers = {}
 
@@ -49,7 +50,6 @@ const controllers = {}
 // }
 
 controllers.loginAdmin = async (req, res) => {
-    controllers.loginDosen = async (req, res) => {
         try 
         {
             const cekNIP = await models.lecturers.findOne({
@@ -85,7 +85,7 @@ controllers.loginAdmin = async (req, res) => {
                 httpOnly    : true,
                 maxAge      : 24 * 60 * 60 * 1000
             })
-            res.json({accessToken})
+            // res.json({accessToken})
         } 
         catch (err) 
         {
@@ -93,7 +93,6 @@ controllers.loginAdmin = async (req, res) => {
             console.log(err)
         }
     }
-}
 
 controllers.loginDosen = async (req, res) => {
     try 
@@ -107,7 +106,7 @@ controllers.loginDosen = async (req, res) => {
             return res.status(400).json({msg : "NIP salah"})
         const user = await models.user.findOne({
             where : {
-                id  : cekNIP.id
+                id : cekNIP.id
             }
         })
         const cocok = await bcrypt.compareSync(req.body.password, user.password)
@@ -120,8 +119,6 @@ controllers.loginDosen = async (req, res) => {
         const accessToken = jwt.sign({id, nama, email, type}, process.env.ACCESS_TOKEN_SECRET, {
             expiresIn : '600s'
         })
-        if (user.type=!'D')
-            return res.status(400).json({msg : "Anda bukan Dosen"})
         await models.user.update({remember_token : accessToken}, {
             where : {
                 email : email
