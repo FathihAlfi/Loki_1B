@@ -8,9 +8,6 @@ controllers.getAllUser = async (req, res) => {
     res.status(200).send(users)
 }
 
-controllers.hello = async(req, res) => {
-    res.status(200).send("Hello world!!!")
-}
 
 controllers.register = async(req, res) => {
     const {nama, email, password, confPassword } = req.body;

@@ -7,6 +7,7 @@ const course_plan_references = require('./course_plan_references.js')
 const migrationstest = require('./migrationstest.js')
 const auth = require('./auth.js')
 const RPS = require('./RPS')
+const mhs = require('./mhs.js')
 
 const controllers = {}
 
@@ -19,5 +20,6 @@ controllers.course_plan_references = course_plan_references
 controllers.migratiosntest = migrationstest
 controllers.auth = auth
 controllers.RPS = RPS
+controllers.mhs = mhs
 
 module.exports = controllers

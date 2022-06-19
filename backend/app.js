@@ -23,12 +23,15 @@ database.authenticate()
 app.set("view engine", "ejs")
 app.use(express.static("views"))
 
+app.use('/', server.mhs)
+app.use('/', server.admin)
+app.use('/', server.dosen)
 app.use('/', server.user)
 app.use('/', server.migrationstest)
 app.use('/', server.auth)
 app.use('/', server.logout)
 app.use('/', server.RPS)
-app.use('/', server.dosen)
+
 
 app.listen(port, () =>
 {

@@ -4,12 +4,67 @@ const jwt = require('jsonwebtoken')
 
 const controllers = {}
 
-controllers.login = async (req, res) => {
+// controllers.login = async (req, res) => {
+//     // res.render("logindosen")
+//     try 
+//     {
+//         const cekNIP = await models.lecturers.findOne({
+//             where : {
+//                 reg_id : req.body.NIP
+//             }
+//         })
+//         if (!cekNIP)
+//             return res.status(400).json({msg : "NIP salah"})
+//         const user = await models.user.findOne({
+//             where : {
+//                 id  : cekNIP.id
+//             }
+//         })
+//         const cocok = await bcrypt.compareSync(req.body.password, user.password)
+//         if(!cocok)
+//             return res.status(400).json({msg : "Password salah"})
+//         const id = user.id
+//         const nama = user.nama
+//         const email = user.email
+//         const type = user.type
+//         const accessToken = jwt.sign({id, nama, email, type}, process.env.ACCESS_TOKEN_SECRET, {
+//             expiresIn : '600s'
+//         })
+//         await models.user.update({remember_token : accessToken}, {
+//             where : {
+//                 email : email
+//             }
+//         })
+//         res.cookie('accessToken', accessToken, {
+//             httpOnly    : true,
+//             maxAge      : 24 * 60 * 60 * 1000
+//         })
+//         res.json({accessToken})
+//     } 
+//     catch (err) 
+//     {
+//         res.status(404).json({msg : "Email tidak ditemukan"})
+//         console.log(err)
+//     }
+// }
+
+controllers.loginAdmin = async (req, res) => {
+
+}
+
+controllers.loginDosen = async (req, res) => {
     try 
     {
+        const cekNIP = await models.lecturers.findOne({
+            where : {
+                reg_id : req.body.NIP
+            }
+        })
+        if (!cekNIP)
+            return res.status(400).json({msg : "NIP salah"})
         const user = await models.user.findOne({
             where : {
-                email : req.body.email
+                id  : cekNIP.id
             }
         })
         const cocok = await bcrypt.compareSync(req.body.password, user.password)
