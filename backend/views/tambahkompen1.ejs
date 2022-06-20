@@ -61,30 +61,31 @@
                         <div class="col-2"><h6>: Senin/13.30-16.00</h6></div>
                       </div><br>
                 <div class="table shadow mb-4">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr class="table-active text-center">
-                                    <td colspan="5" class="table-active"><h6>Komponen Penilian</h6></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="text-center">
-                                    <th>Tugas</th>
-                                    <th>Kuis</th>
-                                    <th>UTS</th>
-                                    <th>UAS</th>
-                                    <th><input type="judulkompen" id="inputjudulkompen1" class="form-save text-center"></th>
-                                </tr>
-                                <tr class="text-center">
-                                    <td>25</td>
-                                    <td>15</td>
-                                    <td>10</td>
-                                    <td>25</td>
-                                    <th><input type="nilaikompen" id="inputnilaikompen1" class="form-save text-center"></th>
-                                </tr>
-                            </tbody>
-                        </table>
-                </div><br>
+                  <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th class="text-center"><input name="course_id" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                        </tr>
+                        <tr>
+                            <th scope="col">ID Mata Kuliah</th>
+                            <th class="text-center"><input name="course_id" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Nama Komponen</th>
+                            <th class="text-center"><input name="code" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Persentase</th>
+                            <th class="text-center"><input name="name" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Nilai</th>
+                            <th class="text-center"><input name="alias_name" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                        </tr>
+                    </thead> 
+                </table>
+                </div>
                 <a href="savekompen1.ejs" class="btn btn-danger mb-3"><i class="fa-solid fa-bookmark me-2"></i>Simpan</a>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                   <a href="lihatkompen1.ejs" class="btn btn-success" type="button">Kembali</a>
