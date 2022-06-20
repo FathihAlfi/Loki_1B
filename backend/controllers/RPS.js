@@ -1,7 +1,6 @@
 const models = require('../models/index')
 const jwt = require('jsonwebtoken')
 
-
 const controllers = {}
 
 controllers.hlmTambahRPS = async (req, res) => {
