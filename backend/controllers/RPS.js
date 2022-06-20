@@ -13,7 +13,6 @@ controllers.hlmRevRPS = async (req, res) => {
 }
 
 controllers.tambahRPS = async (req, res) => {
-    // controllers.cekRPS
     const RPS = await models.course_plans.findOne({
         where : {
             course_id : req.body.course_id
@@ -69,6 +68,14 @@ controllers.lihatRPS = async (req, res) => {
 }
 
 controllers.revisiRPS = async (req, res) => {
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        return res.status(200).json("tidak ada token")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
+
     const RPS = await models.course_plans.findOne({
         where : {
             id : req.body.course_id
