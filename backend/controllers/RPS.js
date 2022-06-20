@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 const controllers = {}
 
 controllers.hlmTambahRPS = async (req, res) => {
-    res.render("tambahrps")
+    res.render("tambahRPS")
 }
 
 controllers.hlmRevRPS = async (req, res) => {
