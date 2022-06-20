@@ -49,6 +49,10 @@ const controllers = {}
 //     }
 // }
 
+controllers.login = async (req, res) => {
+    res.render("mainlogin")
+}
+
 controllers.loginAdmin = async (req, res) => {
         try 
         {

@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const express = require('express')
 const app = express()
 const port = 8000
+const controllers = require('./controllers/index.js')
 const server = require('./routes/index.js')
 const cookieParser = require('cookie-parser');
 require('dotenv').config()
@@ -23,6 +24,8 @@ database.authenticate()
 app.set("view engine", "ejs")
 app.use(express.static("views"))
 
+app.get('/login', controllers.auth.login)
+app.delete('/logout', controllers.auth.logout)
 app.use('/', server.mhs)
 app.use('/', server.admin)
 app.use('/', server.dosen)
