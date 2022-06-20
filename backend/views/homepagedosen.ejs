@@ -24,8 +24,8 @@
                     <div class="mt-1 mb-2 d-block mx-auto" style="width: 50px">
                       <img src="profil.png" class="img-fluid">
                     </div>
-                    <h6 class="text-center fs-6">Husnil Kamil, M.T.</h6>
-                    <h6 class="text-center fs-6">NIP.198201182008121002</h6><hr>
+                    <h6 class="text-center fs-6"><%= nama %></h6>
+                    <h6 class="text-center fs-6">NIP <%= NIP %></h6><hr>
                     <li class="nav-item">
                       <a class="nav-link active text-black" aria-current="page" href="homepagedosen.html"><i class="fa-solid fa-list me-2"></i>List RPS</a><hr>
                     </li>
@@ -67,9 +67,9 @@
                         %>
                         <tr>
                             <th class="text-center" scope="row"><%= i+1%></th>
-                            <td><%= R.name %></td>
-                            <td class="text-center"><%= R.code %></td>
-                            <td class="text-center"><%= R.credit %></td>
+                            <td><%= R.course_plan.name %></td>
+                            <td class="text-center"><%= R.course_plan.code %></td>
+                            <td class="text-center"><%= R.course_plan.credit %></td>
                             <td class="text-center">
                                 <div class="dropdown">
                                 <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -88,7 +88,7 @@
                       <% i++} ) %>
                     </tbody>
                 </table><br>
-                <a href="tambahrps.html" class="btn btn-warning mb-3"><i class="fas fa-plus-square me-2"></i>Tambah RPS</a>
+                <a href="" class="btn btn-warning mb-3"><i class="fas fa-plus-square me-2"></i>Tambah RPS</a>
             </div>
         </div>
     </nav>

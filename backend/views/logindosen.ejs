@@ -31,18 +31,18 @@
                     <h1 class="card-title text-center">Portal Dosen</h1>
                 </div>
                 <div class="card-text">
-                    <form action="/loginDosen" method="POST">
+                    <form action="/loginDosen" method="post">
                         <div class="mb-3">
                           <label for="exampleInputNIP1" class="form-label">NIP</label>
-                          <input type="text" name="NIP" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          <input type="text" name="NIP" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" autofocus re>
                         </div>
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">Password</label>
                           <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                         </div>
-                        <a href="/homeDosen">
-                            <button type="button" class="btn btn-dark">Log In</button>
-                        </a>
+                        <div>
+                          <button type="submit" class="btn btn-dark">Log In</button>
+                        </div>
                       </form>
                 </div>
             </div>

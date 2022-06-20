@@ -95,6 +95,7 @@ controllers.loginAdmin = async (req, res) => {
     }
 
 controllers.loginDosen = async (req, res) => {
+    res.cookie('q', 'w')
     try 
     {
         const cekNIP = await models.lecturers.findOne({
@@ -113,10 +114,11 @@ controllers.loginDosen = async (req, res) => {
         if(!cocok)
             return res.status(400).json({msg : "Password salah"})
         const id = user.id
-        const nama = user.nama
+        const nama = user.name
         const email = user.email
         const type = user.type
-        const accessToken = jwt.sign({id, nama, email, type}, process.env.ACCESS_TOKEN_SECRET, {
+        const NIP = req.body.NIP
+        const accessToken = jwt.sign({id, nama, email, type, NIP}, process.env.ACCESS_TOKEN_SECRET, {
             expiresIn : '600s'
         })
         await models.user.update({remember_token : accessToken}, {
@@ -128,7 +130,7 @@ controllers.loginDosen = async (req, res) => {
             httpOnly    : true,
             maxAge      : 24 * 60 * 60 * 1000
         })
-        res.json({accessToken})
+        res.status(200).redirect("/homeDosen")
     } 
     catch (err) 
     {
