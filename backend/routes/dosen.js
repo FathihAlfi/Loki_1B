@@ -14,6 +14,6 @@ server.get('/ubahRPS', cekDosenPengampu, controllers.RPS.lihatRPS)
 server.get('/tambahRPS', cekLogin, controllers.RPS.hlmTambahRPS)
 server.post('/tambahRPS', controllers.RPS.tambahRPS)
 server.put('/revisiRPS', cekDosenPengampu, controllers.RPS.revisiRPS)
-server.get('/tambahRef', cekLogin, controllers.)
+// server.get('/tambahRef', cekLogin, controllers.) 
 
 module.exports = server
