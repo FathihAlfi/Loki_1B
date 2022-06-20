@@ -5,6 +5,10 @@ controllers.hlmTambahRef = async (req, res) => {
     res.render("tambahRef")
 }
 
+controllers.hlmDetailRef = async (req, res) => {
+    res.render("")
+}
+
 controllers.tambahRef = async(req, res) => {
     const matkul = await models.course_plans.findOne({
         where : {
