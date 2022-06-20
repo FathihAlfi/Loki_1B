@@ -8,6 +8,13 @@ controllers.hlmTambahRef = async (req, res) => {
 }
 
 controllers.hlmDetailRef = async (req, res) => {
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        res.render("loginDosen")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id_dosen = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
 
     const id = req.params.id
     const name = req.params.name
@@ -16,7 +23,7 @@ controllers.hlmDetailRef = async (req, res) => {
             course_plan_id : req.params.id
         }
     })
-    res.render("referensi1", {ref, name, id})
+    res.render("referensi1", {ref, name, id, nama, NIP})
 }
 
 controllers.semuaRef = async (req, res) => {
