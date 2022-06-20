@@ -58,131 +58,26 @@
                     <table class="table table-success table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th class="text-center" scope="col">No.</th>
-                                <th class="text-center" scope="col">Nama Dosen</th>
-                                <th class="text-center" scope="col">NIP</th>
-                                <th class="text-center" scope="col">Hak Akses</th>
-                                <th class="text-center" scope="col">Edit</th>
+                                <th scope="col">ID</th>
+                                <th class="text-center"><input name="course_id" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Nama Dosen</th>
+                                <th class="text-center"><input name="course_id" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col">NIP</th>
+                                <th class="text-center"><input name="code" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Telepon</th>
+                                <th class="text-center"><input name="name" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Status</th>
+                                <th class="text-center"><input name="alias_name" type="tambahrps" id="inputtambahrps" class="form-control"></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th class="text-center" scope="row">1</th>
-                                <td>Husnil Kamil, M.T.</td>
-                                <td class="text-center">198201182008121002</td>
-                                <td class="text-center">Dosen Pengampu</td>
-                                <td class="text-center"><a href="editaksesdosen.ejs"><i class="fa-solid fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th class="text-center" scope="row">2</th>
-                                <td>Hasdi Putra,M.T.</td>
-                                <td class="text-center">198307272008121003</td>
-                                <td class="text-center">Dosen Pengampu</td>
-                                <td class="text-center"><a href="editaksesdosen.ejs"><i class="fa-solid fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th class="text-center"scope="row">3</th>
-                                <td >Prof.Surya Afnarius,Ph.D</td>
-                                <td class="text-center">196404091995121001</td>
-                                <td class="text-center">Hanya Revisi RPS</td>
-                                <td class="text-center"><a href="editaksesdosen.ejs"><i class="fa-solid fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th class="text-center" scope="row">4</th>
-                                <td>Fajril Akbar,M.Sc.</td>
-                                <td class="text-center">198001102008121002</td>
-                                <td class="text-center">Hanya Revisi RPS</td>
-                                <td class="text-center"><a href="editaksesdosen.ejs"><i class="fa-solid fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th class="text-center" scope="row">5</th>
-                                <td>Meza Silvana,M.T</td>
-                                <td class="text-center">198103252008122003</td>
-                                <td class="text-center">Hanya Revisi RPS</td>
-                                <td class="text-center"><a href="editaksesdosen.ejs"><i class="fa-solid fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th class="text-center" scope="row">6</th>
-                                <td>Dr.Wahyudi</td>
-                                <td class="text-center">198105052014041001</td>
-                                <td class="text-center">
-                                    <div class="nav-link dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Edit Akses
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                      <li><a class="dropdown-item" href="#">Dosen Pengampu</a></li>
-                                      <li><a class="dropdown-item" href="#">Hanya Revisi RPS</a></li>
-                                      <li><a class="dropdown-item" href="#">Tidak Memiliki Akses</a></li>
-                                    </ul>
-                                  </div>
-                                </td>
-                                <td class="text-center"><a href="aksesdosen1.ejs" class="btn btn-danger">Simpan</a></td>
-                            </tr>
-                            <tr>
-                                <th class="text-center" scope="row">7</th>
-                                <td>Jefril Rahmadoni,M.Kom.</td>
-                                <td class="text-center">198904152019031009</td>
-                                <td class="text-center">Tidak Memiliki Akses</td>
-                                <td class="text-center"><a href="editaksesdosen.ejs"><i class="fa-solid fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th class="text-center" scope="row">8</th>
-                                <td>Ullya Mega Wahyuni,M.Kom.</td>
-                                <td class="text-center"> 199011032019032008</td>
-                                <td class="text-center">Tidak Memiliki Akses</td>
-                                <td class="text-center"><a href="editaksesdosen.ejs"><i class="fa-solid fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th class="text-center" scope="row">9</th>
-                                <td>Afriyanti Dwi Kartika,M.T.</td>
-                                <td class="text-center">198904212019032024</td>
-                                <td class="text-center">Tidak Memiliki Akses</td>
-                                <td class="text-center"><a href="editaksesdosen.ejs"><i class="fa-solid fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th class="text-center" scope="row">10</th>
-                                <td>Dwi Welly Sukma Nirad,M.T.</td>
-                                <td class="text-center">199108122019032018</td>
-                                <td class="text-center">Tidak Memiliki Akses</td>
-                                <td class="text-center"><a href="editaksesdosen.ejs"><i class="fa-solid fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th class="text-center" scope="row">11</th>
-                                <td>Adi Arga Arifanur,M.Kom.</td>
-                                <td class="text-center">199208202019031005</td>
-                                <td class="text-center">Tidak Memiliki Akses</td>
-                                <td class="text-center"><a href="editaksesdosen.ejs"><i class="fa-solid fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th class="text-center" scope="row">12</th>
-                                <td>Hafizah Hanim,M.Kom.</td>
-                                <td class="text-center">199309292019032022</td>
-                                <td class="text-center">Tidak Memiliki Akses</td>
-                                <td class="text-center"><a href="editaksesdosen.ejs"><i class="fa-solid fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th class="text-center" scope="row">13</th>
-                                <td>Rahmatika Pratama Santi,M.T.</td>
-                                <td class="text-center">199308152022032017</td>
-                                <td class="text-center">Tidak Memiliki Akses</td>
-                                <td class="text-center"><a href="editaksesdosen.ejs"><i class="fa-solid fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th class="text-center" scope="row">14</th>
-                                <td>Ricky Akbar,M.Kom.</td>
-                                <td class="text-center">198410062012121001</td>
-                                <td class="text-center">Tidak Memiliki Akses</td>
-                                <td class="text-center"><a href="editaksesdosen.ejs"><i class="fa-solid fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip"></i></a></td>
-                            </tr>
-                            <tr>
-                                <th class="text-center" scope="row">15</th>
-                                <td>Haris Suryamen,M.Sc</td>
-                                <td class="text-center">197503232012121001</td>
-                                <td class="text-center">Tidak Memiliki Akses</td>
-                                <td class="text-center"><a href="editaksesdosen.ejs"><i class="fa-solid fa-edit bg-warning p-2 text-black rounded" data-toggle="tooltip"></i></a></td>
-                            </tr>
-                        </tbody>
                     </table>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                         <a href="aksesdosen1.ejs" class="btn btn-success" type="button">Kembali</a>
