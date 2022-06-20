@@ -28,7 +28,6 @@ app.use('/', server.admin)
 app.use('/', server.dosen)
 app.use('/', server.user)
 app.use('/', server.auth)
-app.use('/', server.RPS)
 
 
 app.listen(port, () =>
