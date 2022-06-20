@@ -11,32 +11,7 @@
     <%- include ('modals/headdosen') %>
     <nav>
           <div class="row no-gutters mt-5">
-            <div class="col-md-2 bg-light mt-2 pr-3 pt-4">
-                <ul class="nav flex-column ml-3 mb-5">
-                    <div class="mt-1 mb-2 d-block mx-auto" style="width: 50px">
-                      <img src="profil.png" class="img-fluid">
-                    </div>
-                    <h6 class="text-center fs-6">Husnil Kamil, M.T.</h6>
-                    <h6 class="text-center fs-6">NIP.198201182008121002</h6><hr>
-                    <li class="nav-item">
-                      <a class="nav-link active text-black" aria-current="page" href="homepagedosen.ejs"><i class="fa-solid fa-list me-2"></i>List RPS</a><hr>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-black" href="cpmk.ejs"><i class="fa-solid fa-map me-2"></i>CPMK</a><hr>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-black" href="refdosen.ejs"><i class="fa-solid fa-book-bookmark me-2"></i>Referensi</a><hr>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="jadwaldosen.ejs"><i class="fa-solid fa-calendar-days me-2"></i>Jadwal Pertemuan</a><hr>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="kompendosen.ejs"><i class="fa-solid fa-award me-2"></i>Komponen Nilai</a><hr>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="mainlogin.ejs"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Sign Out</a><hr>
-                    </li>
-            </div>
+            <%- include ('modals/navbardosen', {nama, NIP}) %>
             <div class="col-md-10 p-4 pt-4">
                 <h3><i class="fa-solid fa-award me-2"></i>Komponen Penilaian</h3><hr>
                 <div class="container">

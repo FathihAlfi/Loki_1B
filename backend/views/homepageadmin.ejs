@@ -11,29 +11,7 @@
     <%- include ('modals/headadmin') %>
     <nav>
           <div class="row no-gutters mt-5">
-            <div class="col-md-2 bg-light mt-2 pr-3 pt-4">
-                <ul class="nav flex-column ml-3 mb-5">
-                    <div class="mt-1 mb-2 d-block mx-auto" style="width: 50px">
-                      <img src="profil.png" class="img-fluid">
-                    </div>
-                    <h6 class="text-center fs-6">Abu Bakar,M.Kom.</h6>
-                    <h6 class="text-center fs-6">NIP.198201132432534639</h6><hr>
-                    <li class="nav-item">
-                      <a class="nav-link active text-black" aria-current="page" href="homepageadmin.html"><i class="fa-solid fa-list me-2"></i>List RPS</a><hr>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-black" href="aksesdosen.html"><i class="fa-solid fa-universal-access me-2"></i>Hak Akses Dosen</a><hr>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-black" href="cpmk-cpl.html"><i class="fa-solid fa-award me-2"></i></i>CPMK-CPL</a><hr>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="persentaserps.html"><i class="fa-solid fa-chart-line me-2"></i>Persentase RPS</a><hr>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-black" href="mainlogin.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Sign Out</a><hr>
-                  </li>
-            </div>
+            <%- include ('modals/navbaradmin', {nama, NIP}) %>
             <div class="col-md-10 p-4 pt-4">
                 <h3><i class="fa-solid fa-list me-2"></i>List RPS</h3><hr>
                 <div class="container">

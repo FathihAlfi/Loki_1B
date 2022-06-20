@@ -11,18 +11,7 @@
     <%- include ('modals/headadmin') %>
     <nav>
           <div class="row no-gutters mt-5">
-            <div class="col-md-2 bg-light mt-2 pb-5 pt-4 mb-1">
-                <ul class="nav flex-column ml-3 mb-5">
-                    <div class="mt-1 mb-2 d-block mx-auto" style="width: 50px">
-                      <img src="profil.png" class="img-fluid">
-                    </div>
-                    <h6 class="text-center fs-6">Abu Bakar,M.Kom.</h6>
-                    <h6 class="text-center fs-6">NIP.198201132432534639</h6><hr>
-                    <li class="nav-item">
-                      <a class="nav-link text-black" href="mainlogin.ejs"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Sign Out</a><hr>
-                   </li>
-                </ul>
-            </div>
+            <%- include ('modals/navbaradmin', {nama, NIP}) %>
             <div class="col-md-10 p-4 pt-4">
                 <div class="card">
                   <div class="card-header">
