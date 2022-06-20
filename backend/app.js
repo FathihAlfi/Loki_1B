@@ -30,7 +30,6 @@ app.use('/', server.mhs)
 app.use('/', server.admin)
 app.use('/', server.dosen)
 app.use('/', server.user)
-app.use('/', server.auth)
 
 
 app.listen(port, () =>
