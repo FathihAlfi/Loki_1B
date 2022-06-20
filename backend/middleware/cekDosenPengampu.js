@@ -24,7 +24,7 @@ const cekDosenPengampu = (req, res, next) => {
         }]
     })
     if (!RPS)
-        return res.status(200).json("Hanya dosen pengampu yang dapat mengubah RPS")                
+        return res.status(200).json("Hanya dosen pengampu yang dapat mengubah RPS")
     next();
     })
 }
