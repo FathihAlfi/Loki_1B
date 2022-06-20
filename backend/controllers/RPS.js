@@ -4,21 +4,19 @@ const jwt = require('jsonwebtoken')
 
 const controllers = {}
 
-controllers.cekRPS = async (req, res) => {
-    const RPS = await models.course_plans.findOne({
-        where : {
-            id : req.body.course_id
-        }
-    })
-    if (RPS)
-        return res.status(200).json("Tidak dapat menambahkan RPS yang sudah tersedia")
+controllers.hlmTambahRPS = async (req, res) => {
+    res.render("tambahrps")
+}
+
+controllers.hlmRevRPS = async (req, res) => {
+    
 }
 
 controllers.tambahRPS = async (req, res) => {
     // controllers.cekRPS
     const RPS = await models.course_plans.findOne({
         where : {
-            id : req.body.course_id
+            course_id : req.body.course_id
         }
     })
     if (RPS)
@@ -35,7 +33,7 @@ controllers.tambahRPS = async (req, res) => {
             semester        : semester,
             description     : description
         })
-        res.json({msg: "Berhasil menambahkan RPS"});
+        res.status(200).redirect("/homeDosen")
     } catch (err) {
         console.log(err);
     }

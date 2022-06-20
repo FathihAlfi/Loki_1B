@@ -99,7 +99,6 @@ controllers.loginAdmin = async (req, res) => {
     }
 
 controllers.loginDosen = async (req, res) => {
-    res.cookie('q', 'w')
     try 
     {
         const cekNIP = await models.lecturers.findOne({

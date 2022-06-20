@@ -16,6 +16,7 @@ const cekDosenPengampu = require('../middleware/cekDosenPengampu.js')
 
 server.get('/lihatRPS', controllers.RPS.lihatRPS)
 server.get('/ubahRPS', cekDosenPengampu, controllers.RPS.lihatRPS)
+server.get('/tambahRPS', controllers.RPS.hlmTambahRPS)
 server.post('/tambahRPS', controllers.RPS.tambahRPS)
 server.put('/revisiRPS', cekDosenPengampu, controllers.RPS.revisiRPS)
 
