@@ -4,9 +4,10 @@ const { Sequelize, DataTypes, err } = require('sequelize');
 const db = require('../config/database.js')
 var course_plan_references = db.define('course_plan_references', {
     id : {
-        type        : DataTypes.BIGINT,
-        allowNull   : false,
-        primaryKey  : true
+        type            : DataTypes.BIGINT,
+        allowNull       : false,
+        primaryKey      : true,
+        autoIncrement   : true
     },
     course_plan_id :  {
         type        : DataTypes.BIGINT,

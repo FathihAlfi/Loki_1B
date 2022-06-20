@@ -14,9 +14,9 @@ server.get('/ubahRPS', cekDosenPengampu, controllers.RPS.lihatRPS)
 server.get('/tambahRPS', cekLogin, controllers.RPS.hlmTambahRPS)
 server.post('/tambahRPS', controllers.RPS.tambahRPS)
 server.put('/revisiRPS', cekDosenPengampu, controllers.RPS.revisiRPS)
-server.get('detailRef', cekLogin, controllers.course_plan_references.hlmDetailRef)
-server.get('/tambahRef', cekLogin, controllers.course_plan_references.hlmTambahRef)
-server.post('/tambahRef', cekLogin, controllers.course_plan_references.tambahRef)
+server.get('/detailRef/:id/:name', controllers.course_plan_references.hlmDetailRef)
+server.get('/tambahRef/:id', cekLogin, controllers.course_plan_references.hlmTambahRef)
+server.post('/tambahRef/:id', cekLogin, controllers.course_plan_references.tambahRef)
 server.delete('/hapusRef', )
 
 module.exports = server

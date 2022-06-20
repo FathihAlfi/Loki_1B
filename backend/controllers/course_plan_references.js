@@ -2,29 +2,31 @@ const models = require('../models/index')
 const controllers = {}
 
 controllers.hlmTambahRef = async (req, res) => {
-    res.render("tambahRef")
+    const id = req.params.id
+    res.render("tambahRef", {id})
 }
 
 controllers.hlmDetailRef = async (req, res) => {
-    res.render("")
+
+    const id = req.params.id
+    const name = req.params.name
+    const ref = await models.course_plan_references.findAll({
+        where : {
+            course_plan_id : req.params.id
+        }
+    })
+    res.render("referensi1", {ref, name, id})
 }
 
 controllers.tambahRef = async(req, res) => {
-    const matkul = await models.course_plans.findOne({
-        where : {
-            id : req.query.course_plan_id
-        }
-    })
     try {
-        const {id, title, author, publisher, year ,description} = req.body
         await models.course_plan_references.create({
-            id  : id,
-            course_plan_id  : req.query.course_plan_id,
-            title           : title,
-            author          : author,
-            publisher       : publisher,
-            year            : year,
-            description     : description
+            course_plan_id  : req.params.id,
+            title           : req.body.title,
+            author          : req.body.author,
+            publisher       : req.body.publisher,
+            year            : req.body.year,
+            description     : req.body.description
         })
         res.json({msg: "Berhasil menambahkan referensi mata kuliah"});
     } catch (err) {
