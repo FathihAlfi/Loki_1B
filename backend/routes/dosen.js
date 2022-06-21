@@ -33,16 +33,15 @@ server.get('/hapusKomponen/:idHapus/:id/:name', cekLogin, controllers.course_pla
 server.get('/editKomponen/:idEdit/:id/:name', cekLogin, controllers.course_plan_assessments.hlmEditKomponen)
 server.post('/editKomponen/:idEdit/:id/:name', cekLogin, controllers.course_plan_assessments.editKomponen)
 
-server.get('/semuaPertemuan', cekLogin, )
+server.get('/semuaPertemuan', cekLogin, controllers.course_plan_details.semuaPertemuan) //?
 server.get('/detailPertemuan/:id/:name', cekLogin, controllers.course_plan_details.detailPertemuan)
 server.get('/tambahPertemuan/:id/:name', cekLogin, controllers.course_plan_details.hlmTambahPertemuan)
 server.post('/tambahPertemuan/:id/:name', cekLogin, controllers.course_plan_details.tambahPertemuan)
-server.get('/hapusPertemuan/:idHapus/:id/:name', cekLogin, )
+server.get('/hapusPertemuan/:idHapus/:id/:name', cekLogin, controllers.course_plan_details.hapusPertemuan) //?
 server.get('/editPertemuan/:idEdit/:id/:name', cekLogin, controllers.course_plan_details.hlmEditPertemuan)
 server.post('/editPertemuan/:idEdit/:id/:name', cekLogin, controllers.course_plan_details.editPertemuan)
 
 server.get('/detailCPMK/:id/:name', cekLogin, controllers.course_los.detailCPMK)
 server.get('/tambahCPMK/:id/:name', cekLogin, controllers.course_los.hlmTambahCPMK)
-
 
 module.exports = server

@@ -2,6 +2,48 @@ const models = require('../models/index')
 const jwt = require('jsonwebtoken')
 const controllers = {}
 
+controllers.semuaPertemuan = async (req, res) => {
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        res.render("loginDosen")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
+    models.course_plans.hasMany(models.course_plan_details, {foreignKey: "course_plan_id"})
+    models.course_plan_details.belongsTo(models.course_plans, {foreignKey: "id"})
+    models.course_plans.hasMany(models.course_plan_lecturers, {foreignKey: "id"})
+    models.course_plan_lecturers.belongsTo(models.course_plans, {foreignKey: "course_plan_id"})
+   
+    const ref = await models.course_plan_details.findAll({
+        include : [{
+            model : models.course_plans,
+            include : [{
+                model : models.course_plan_lecturers,
+                where : {
+                    lecturer_id : 2
+                }
+            }]
+        }]
+    })
+    res.render("semuaPertemuan", { pertemuan, nama, NIP})
+}
+
+controllers.hapusPertemuan = async(req, res) => {
+    try {
+        const id = req.params.id
+        const name = req.params.name
+        await models.course_plan_details.destroy({
+            where : {
+                id   : req.params.idHapus
+            }
+        })
+        res.status(200).redirect("/detailPertemuan/"+id+"/"+name) 
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 controllers.detailPertemuan = async (req, res) => {
     const accessToken = req.cookies.accessToken 
     if (!accessToken)
