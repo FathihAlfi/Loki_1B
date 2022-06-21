@@ -16,9 +16,28 @@ controllers.hlmTambahKomponen = async (req, res) => {
 }
 
 controllers.tambahKomponen = async (req, res) => {
-    const data = req.body.name
-    const test = JSON.stringify(data)
-    res.json({data})
+    try {
+        if (req.body.name == "Tugas Besar"){
+            await models.course_plan_assessments.create({
+                course_plan_id  : req.params.id,
+                name            : req.body.name,
+                percentage      : req.body.percentage,
+                flag            : 1
+            })
+        }
+        else{
+            await models.course_plan_assessments.create({
+                course_plan_id  : req.params.id,
+                name            : req.body.name,
+                percentage      : req.body.percentage,
+                flag            : 0
+            })
+        }
+        res.status(200).redirect("/homeDosen")
+    } catch (err) {
+        console.log(err);
+        res.json({err})
+    }
 }
 
 controllers.detailKomponen = async (req, res) => {
