@@ -32,4 +32,6 @@ server.get('/detailPertemuan/:id/:name', cekLogin, controllers.course_plan_detai
 server.get('/tambahPertemuan/:id/:name', cekLogin, controllers.course_plan_details.hlmTambahPertemuan)
 server.post('/tambahPertemuan/:id/:name', cekLogin, controllers.course_plan_details.tambahPertemuan)
 
+server.get('/detailCPMK/:id/:name', cekLogin, )
+
 module.exports = server

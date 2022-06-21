@@ -10,6 +10,7 @@ const password_resets = require('./password_resets.js')
 const model_has_permissions = require('./model_hal_permissions.js')
 const migrations = require('./migrations.js')
 const course_plan_lecturers = require('./course_plan_lecturers.js')
+const course_los = require('./course_los.js')
 const curriculum_los = require('./curriculum_los.js')
 const curricula = require('./curricula.js')
 const curriculum_profiles = require('./curriculum_profiles.js')
@@ -19,7 +20,7 @@ const course_plan_detail_refs = require('./course_plan_detail_refs.js')
 const course_plan_details = require('./course_plan_details.js')
 const course_plan_assessments = require('./course_plan_assessments.js')
 const course_plans = require('./course_plans.js')
-
+const course_lo_details = require('./course_lo_details.js')
 
 const models = {}
 
@@ -35,6 +36,7 @@ models.password_resets = password_resets
 models.model_has_permissions = model_has_permissions
 models.migrations = migrations
 models.course_plan_lecturers = course_plan_lecturers
+models.course_los = course_los
 models.curriculum_los = curriculum_los
 models.curricula = curricula
 models.curriculum_profiles = curriculum_profiles
@@ -44,6 +46,7 @@ models.course_plan_detail_refs = course_plan_detail_refs
 models.course_plan_details = course_plan_details
 models.course_plan_assessments = course_plan_assessments
 models.course_plans = course_plans
+models.course_lo_details = course_lo_details
 
 course_plans.hasMany(course_plan_lecturers, {
     foreignKey : 'course_plan_id', 
