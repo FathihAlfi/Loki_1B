@@ -18,7 +18,20 @@ controllers.detailCPMK = async (req, res) => {
             course_plan_id : req.params.id
         }
     })
-    res.render()
+    res.render("CPMK1", {CPMK, name, id, nama, NIP})
+}
+
+controllers.hlmTambahCPMK = async (req, res) => {
+    const id = req.params.id
+    const name = req.params.name
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        return res.status(200).json("tidak ada token")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id_dosen = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
+    res.render("tambahCPMK", {id, name, nama, NIP})
 }
 
 module.exports = controllers
