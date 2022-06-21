@@ -15,6 +15,26 @@ controllers.hlmTambahKomponen = async (req, res) => {
     res.render("tambahKomponen", {nama, NIP, id})
 }
 
+controllers.hlmEditKomponen = async (req, res) => {
+    const id = req.params.id
+    const name = req.params.name
+    const idEdit = req.params.idEdit
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        return res.status(200).json("tidak ada token")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id_dosen = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
+
+    const ref = await models.course_plan_assessments.findOne({
+        where : {
+            id : req.params.idEdit
+        }
+    })
+    res.render("editKomponen", {ref, idEdit, id, name, nama, NIP})
+}
+
 controllers.tambahKomponen = async (req, res) => {
     try {
         if (req.body.name == "Tugas Besar"){
