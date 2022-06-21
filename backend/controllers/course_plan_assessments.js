@@ -4,6 +4,7 @@ const { json } = require('body-parser')
 const controllers = {}
 
 controllers.hlmTambahKomponen = async (req, res) => {
+    const name = req.params.name
     const id = req.params.id
     const accessToken = req.cookies.accessToken 
     if (!accessToken)
@@ -12,7 +13,7 @@ controllers.hlmTambahKomponen = async (req, res) => {
     const id_dosen = payload.id
     const nama = payload.nama
     const NIP = payload.NIP
-    res.render("tambahKomponen", {nama, NIP, id})
+    res.render("tambahKomponen", {name, nama, NIP, id})
 }
 
 controllers.hlmEditKomponen = async (req, res) => {
@@ -48,7 +49,7 @@ controllers.editKomponen = async (req, res) => {
 
         const id = req.params.id
         const name = req.params.name
-        
+
         await models.course_plan_assessments.update({
             percentage      : req.body.percentage,
         },{
@@ -62,6 +63,8 @@ controllers.editKomponen = async (req, res) => {
 
 controllers.tambahKomponen = async (req, res) => {
     try {
+        const id = req.params.id
+        const name = req.params.name
         if (req.body.name == "Tugas Besar"){
             await models.course_plan_assessments.create({
                 course_plan_id  : req.params.id,
@@ -78,7 +81,7 @@ controllers.tambahKomponen = async (req, res) => {
                 flag            : 0
             })
         }
-        res.status(200).redirect("/homeDosen")
+        res.status(200).redirect("/detailKomponen/"+id+"/"+name)
     } catch (err) {
         console.log(err);
         res.json({err})
@@ -104,43 +107,48 @@ controllers.detailKomponen = async (req, res) => {
     res.render("lihatKomponen1", {komponen, name, nama, NIP, id})
 }
 
-controllers.tambahPenilaian = async(req, res) => {
-    const matkul = await models.course_plans.findOne({
-        where : {
-            id : req.query.course_plan_id
-        }
-    })
+controllers.hapusKomponen = async (req, res) => {
     try {
-        const {id, name, percentage} = req.body
-        await models.course_plan_references.create({
-            id  : id,
-            course_plan_id  : req.query.course_plan_id,
-            name            : name,
-            percentage      : percentage,
-            flag            : 0,
-            year            : year,
+        const id = req.params.id
+        const name = req.params.name
+        await models.course_plan_assessments.destroy({
+            where : {
+                id   : req.params.idHapus
+            }
         })
-        res.json({msg: "Berhasil menambahkan referensi mata kuliah"});
+        res.status(200).redirect("/detailKomponen/"+id+"/"+name) 
     } catch (err) {
         console.log(err);
     }
 }
 
-controllers.editPenilaian = async(req, res) => {
+controllers.semuaKomponen = async (req, res) => {
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        res.render("loginDosen")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
 
-}
+    models.course_plans.hasMany(models.course_plan_assessments, {foreignKey: "id"})
+    models.course_plan_assessments.belongsTo(models.course_plans, {foreignKey: "course_plan_id"})
+    models.course_plans.hasMany(models.course_plan_lecturers, {foreignKey: "id"})
+    models.course_plan_lecturers.belongsTo(models.course_plans, {foreignKey: "course_plan_id"})
 
-controllers.hapusPenilaian = async(req, res) => {
-    try {
-        const hapus = await models.course_plan_assessments.deleteOne({id     : id})
-        res.json({msg: "Referensi berhasil dihapus"});
-    } catch (err) {
-        console.log(err);
-    }
-}
-
-controllers.lihatPenilaian = async(req, res) => {
-    
+    const komponen = await models.course_plan_assessments.findAll({
+        include : [{
+            model : models.course_plans,
+            include : [{
+                model : models.course_plan_lecturers,
+                where : {
+                    lecturer_id : id
+                }
+            }]
+        }]
+    })
+    // res.json({komponen})
+    res.render("semuaKomponen", {komponen, nama, NIP})
 }
 
 module.exports = controllers

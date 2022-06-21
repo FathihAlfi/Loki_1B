@@ -25,11 +25,11 @@ server.get('/hapusRef/:idHapus/:id/:name', cekLogin, controllers.course_plan_ref
 server.get('/editRef/:idEdit/:id/:name', cekLogin, controllers.course_plan_references.hlmEditRef)
 server.post('/editRef/:idEdit/:id/:name', cekLogin, controllers.course_plan_references.editRef)
 
-server.get('/semua')
+server.get('/semuaKomponen', cekLogin, controllers.course_plan_assessments.semuaKomponen)
 server.get('/detailKomponen/:id/:name', cekLogin, controllers.course_plan_assessments.detailKomponen) 
-server.get('/tambahKomponen/:id', cekLogin, controllers.course_plan_assessments.hlmTambahKomponen)
-server.post('/tambahKomponen/:id', cekLogin, controllers.course_plan_assessments.tambahKomponen)
-server.get('/hapusKomponen/:idHapus/:id/:name', cekLogin, )
+server.get('/tambahKomponen/:id/:name', cekLogin, controllers.course_plan_assessments.hlmTambahKomponen)
+server.post('/tambahKomponen/:id/:name', cekLogin, controllers.course_plan_assessments.tambahKomponen)
+server.get('/hapusKomponen/:idHapus/:id/:name', cekLogin, controllers.course_plan_assessments.hapusKomponen)
 server.get('/editKomponen/:idEdit/:id/:name', cekLogin, controllers.course_plan_assessments.hlmEditKomponen)
 server.post('/editKomponen/:idEdit/:id/:name', cekLogin, controllers.course_plan_assessments.editKomponen)
 

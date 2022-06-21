@@ -139,8 +139,7 @@ controllers.semuaRef = async (req, res) => {
             }]
         }]
     })
-    res.render("referensi1", { ref, nama, NIP})
-    // res.json({ref})
+    res.render("semuaReferensi", { ref, nama, NIP})
 }
 
 controllers.tambahRef = async(req, res) => {
