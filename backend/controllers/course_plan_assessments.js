@@ -27,12 +27,12 @@ controllers.hlmEditKomponen = async (req, res) => {
     const nama = payload.nama
     const NIP = payload.NIP
 
-    const ref = await models.course_plan_assessments.findOne({
+    const komponen = await models.course_plan_assessments.findOne({
         where : {
             id : req.params.idEdit
         }
     })
-    res.render("editKomponen", {ref, idEdit, id, name, nama, NIP})
+    res.render("editKomponen", {komponen, idEdit, id, name, nama, NIP})
 }
 
 controllers.tambahKomponen = async (req, res) => {
