@@ -16,7 +16,7 @@ controllers.hlmTambahRef = async (req, res) => {
     res.render("tambahRef", {id, nama, NIP})
 }
 
-controllers.hlmDetailRef = async (req, res) => {
+controllers.DetailRef = async (req, res) => {
     const accessToken = req.cookies.accessToken 
     if (!accessToken)
         res.render("loginDosen")

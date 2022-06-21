@@ -16,17 +16,9 @@
                 <h3><i class="fa-solid fa-calendar-days me-2"></i>Jadwal Pertemuan</h3><hr>
                 <div class="container">
                     <div class="row">
-                        <div class="col-2"><h6>Kode Mata Kuliah</h6></div>
-                        <div class="col-2"><h6>: JSI62125</h6></div>
-                      </div>
-                    <div class="row">
                       <div class="col-2"><h6>Nama Mata Kuliah</h6></div>
-                      <div class="col-3"><h6>: Pemrograman Web</h6></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-2"><h6>Jadwal Kelas</h6></div>
-                        <div class="col-2"><h6>: Senin/13.30-16.00</h6></div>
-                      </div><br>
+                      <div class="col-3"><h6>: <%= name %></h6></div>
+                    </div><br>
                 </div>
                 <div class="card shadow mb-4">
                     <div class="card-body">
@@ -37,6 +29,8 @@
                                     <th class="text-center" scope="col">Materi</th>
                                     <th class="text-center" scope="col">Metode</th>
                                     <th class="text-center" scope="col">Pengalaman Belajar Mahasiswa</th>
+                                    <th class="text-center" scope="col">Hapus</th>
+                                    <th class="text-center" scope="col">Edit</th>
                                 </tr>
                             </thead>
                             <body>
@@ -44,8 +38,11 @@
                                     <td class="text-center" scope="col">1</td>
                                     <td scope="col">Pengenalan Web</td>
                                     <td scope="col">Persentase Dosen dan Diskusi(3x50mnt)</td>
-                                    <td scope="col">Mahasiswa memberikan tanggapan tentang konsep dasar dan komponen aplikasi berbasis web</td>
+                                    <td scope="col">Mahasiswa memberikan tanggapan tentang konsep dasar dan komponen aplikasi berbasis web</td>  
+                                    <td class="text-center"><a href=""  class="btn btn-warning mb-3"><i class="bi bi-trash-fill" data-toggle="tooltip" title="delete" ></i></a></td>
+                                    <td class="text-center"><a href="" class="btn btn-warning mb-3"><i class="fas fa-edit bg-warning text-black rounded" data-toggle="tooltip" title="Edit"></a></i></td>      
                                 </tr>
+                                
                             </body>
                         </table>
                         <a href="tambahpertemuan1.ejs" class="btn btn-warning"><i class="fas fa-plus-square me-2"></i>Tambah Jadwal</a>
