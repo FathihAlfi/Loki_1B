@@ -134,7 +134,7 @@ controllers.semuaRef = async (req, res) => {
             include : [{
                 model : models.course_plan_lecturers,
                 where : {
-                    lecturer_id : 2
+                    lecturer_id : id
                 }
             }]
         }]

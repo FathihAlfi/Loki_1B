@@ -15,13 +15,13 @@ controllers.semuaPertemuan = async (req, res) => {
     models.course_plans.hasMany(models.course_plan_lecturers, {foreignKey: "id"})
     models.course_plan_lecturers.belongsTo(models.course_plans, {foreignKey: "course_plan_id"})
    
-    const ref = await models.course_plan_details.findAll({
+    const pertemuan = await models.course_plan_details.findAll({
         include : [{
             model : models.course_plans,
             include : [{
                 model : models.course_plan_lecturers,
                 where : {
-                    lecturer_id : 2
+                    lecturer_id : id
                 }
             }]
         }]

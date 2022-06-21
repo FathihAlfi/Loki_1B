@@ -33,15 +33,20 @@ server.get('/hapusKomponen/:idHapus/:id/:name', cekLogin, controllers.course_pla
 server.get('/editKomponen/:idEdit/:id/:name', cekLogin, controllers.course_plan_assessments.hlmEditKomponen)
 server.post('/editKomponen/:idEdit/:id/:name', cekLogin, controllers.course_plan_assessments.editKomponen)
 
-server.get('/semuaPertemuan', cekLogin, controllers.course_plan_details.semuaPertemuan) //?
+server.get('/semuaPertemuan', cekLogin, controllers.course_plan_details.semuaPertemuan) //pertemuan kelar semua
 server.get('/detailPertemuan/:id/:name', cekLogin, controllers.course_plan_details.detailPertemuan)
 server.get('/tambahPertemuan/:id/:name', cekLogin, controllers.course_plan_details.hlmTambahPertemuan)
 server.post('/tambahPertemuan/:id/:name', cekLogin, controllers.course_plan_details.tambahPertemuan)
-server.get('/hapusPertemuan/:idHapus/:id/:name', cekLogin, controllers.course_plan_details.hapusPertemuan) //?
+server.get('/hapusPertemuan/:idHapus/:id/:name', cekLogin, controllers.course_plan_details.hapusPertemuan)
 server.get('/editPertemuan/:idEdit/:id/:name', cekLogin, controllers.course_plan_details.hlmEditPertemuan)
 server.post('/editPertemuan/:idEdit/:id/:name', cekLogin, controllers.course_plan_details.editPertemuan)
 
+server.get('/semuaCPMK', cekLogin, controllers.course_los.semuaCPMK) //CPMK kelar semua
 server.get('/detailCPMK/:id/:name', cekLogin, controllers.course_los.detailCPMK)
 server.get('/tambahCPMK/:id/:name', cekLogin, controllers.course_los.hlmTambahCPMK)
+server.post('/tambahCPMK/:id/:name', cekLogin, controllers.course_los.tambahCPMK)
+server.get('/hapusCPMK/:idHapus/:id/:name', cekLogin, controllers.course_los.hapusCPMK)
+server.get('/editCPMK/:idEdit/:id/:name', cekLogin, controllers.course_los.hlmEditCPMK)
+server.post('/editCPMK/:idEdit/:id/:name', cekLogin, controllers.course_los.editCPMK)
 
 module.exports = server
