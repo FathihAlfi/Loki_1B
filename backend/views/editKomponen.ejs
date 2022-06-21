@@ -20,35 +20,25 @@
                       <div class="col-3"><h6>: <%= name %></h6></div>
                     </div><br>
                 <div class="table shadow mb-4">
+                  <form action="/editKomponen/<%= idEdit %>/<%= id %>/<%= name %>" method="POST">
                         <table class="table table-bordered">
                           <thead>
                             <tr>
-                                <th scope="col">ID</th>
-                                <th class="text-center"><input name="course_id" type="tambahrps" id="inputtambahrps" class="form-control"></th>
-                            </tr>
-                            <tr>
-                                <th scope="col">ID Mata Kuliah</th>
-                                <th class="text-center"><input name="course_id" type="tambahrps" id="inputtambahrps" class="form-control"></th>
-                            </tr>
-                            <tr>
                                 <th scope="col">Nama Komponen</th>
-                                <th class="text-center"><input name="code" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                                <th class="text-center"><input value="<%= komponen.name %>" name="name" type="tambahrps" id="inputtambahrps" class="form-control" readonly></th>
                             </tr>
                             <tr>
                                 <th scope="col">Persentase</th>
-                                <th class="text-center"><input name="name" type="tambahrps" id="inputtambahrps" class="form-control"></th>
-                            </tr>
-                            <tr>
-                                <th scope="col">Nilai</th>
-                                <th class="text-center"><input name="alias_name" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                                <th class="text-center"><input value="<%= komponen.percentage %>" name="percentage" type="tambahrps" id="inputtambahrps" class="form-control"></th>
                             </tr>
                         </thead> 
                         </table>
-                </div><br>
-                <a href="warningkompen1.ejs" class="btn btn-danger mb-3"><i class="fa-solid fa-bookmark me-2"></i>Simpan</a>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <a href="lihatkompen1.ejs" class="btn btn-success" type="button">Kembali</a>
-                </div>
+                  </div><br>
+                    <button type="submit" class="btn btn-primary mb-3">Update</button>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="lihatkompen1.ejs" class="btn btn-success" type="button">Kembali</a>
+                  </div>
+              </form>
             </div>
         </div>
     </nav>

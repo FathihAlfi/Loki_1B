@@ -35,6 +35,31 @@ controllers.hlmEditKomponen = async (req, res) => {
     res.render("editKomponen", {komponen, idEdit, id, name, nama, NIP})
 }
 
+controllers.editKomponen = async (req, res) => {
+    try {
+        const idEdit = req.params.idEdit
+        const accessToken = req.cookies.accessToken 
+        if (!accessToken)
+            return res.status(200).json("tidak ada token")
+        const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+        const id_dosen = payload.id
+        const nama = payload.nama
+        const NIP = payload.NIP
+
+        const id = req.params.id
+        const name = req.params.name
+        
+        await models.course_plan_assessments.update({
+            percentage      : req.body.percentage,
+        },{
+            where : {id : req.params.idEdit}
+        })
+        res.status(200).redirect("/detailKomponen/"+id+"/"+name)
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 controllers.tambahKomponen = async (req, res) => {
     try {
         if (req.body.name == "Tugas Besar"){
