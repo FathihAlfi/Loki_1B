@@ -4,7 +4,14 @@ const jwt = require('jsonwebtoken')
 const controllers = {}
 
 controllers.hlmTambahRPS = async (req, res) => {
-    res.render("tambahRPS")
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        return res.status(200).json("tidak ada token")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
+    res.render("tambahRPS", {nama, NIP})
 }
 
 controllers.hlmRevRPS = async (req, res) => {

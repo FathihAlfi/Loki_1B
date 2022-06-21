@@ -21,5 +21,8 @@ server.get('/tambahRef/:id', cekLogin, controllers.course_plan_references.hlmTam
 server.post('/tambahRef/:id', cekLogin, controllers.course_plan_references.tambahRef)
 server.get('/hapusRef/:id', cekLogin, controllers.course_plan_references.hapusRef)
 server.get('/semua')
+server.get('/detailKomponen/:id/:name', cekLogin, controllers.course_plan_assessments.detailKomponen) 
+server.get('/tambahKomponen/:id', cekLogin, controllers.course_plan_assessments.hlmTambahKomponen)
+server.post('/tambahKomponen/:id', cekLogin,)
 
 module.exports = server

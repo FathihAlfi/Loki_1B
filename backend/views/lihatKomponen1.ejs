@@ -16,42 +16,33 @@
                 <h3><i class="fa-solid fa-award me-2"></i>Komponen Penilaian</h3><hr>
                 <div class="container">
                     <div class="row">
-                        <div class="col-2"><h6>Kode Mata Kuliah</h6></div>
-                        <div class="col-2"><h6>: JSI62125</h6></div>
-                      </div>
-                    <div class="row">
                       <div class="col-2"><h6>Nama Mata Kuliah</h6></div>
-                      <div class="col-3"><h6>: Pemrograman Web</h6></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-2"><h6>Jadwal Kelas</h6></div>
-                        <div class="col-2"><h6>: Senin/13.30-16.00</h6></div>
-                      </div><br>
+                      <div class="col-3"><h6>: <%= name %></h6></div>
+                    </div><br>
                 <div class="table shadow mb-4">
                         <table class="table table-bordered">
                             <thead>
                                 <tr class="table-active text-center">
-                                    <td colspan="4" class="table-active"><h6>Komponen Penilian</h6></td>
+                                    <td colspan="<%= 5 %>" class="table-active"><h6>Komponen Penilaian</h6></td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="text-center">
-                                    <th>Tugas</th>
-                                    <th>Kuis</th>
-                                    <th>UTS</th>
-                                    <th>UAS</th>
+                                  <% komponen.forEach((K) => { %>
+                                    <th><%= K.name %></th>
+                                    <% } ) %>
                                 </tr>
                                 <tr class="text-center">
-                                    <td>25</td>
-                                    <td>15</td>
-                                    <td>10</td>
-                                    <td>25</td>
+                                  <% komponen.forEach((K) => { %>
+                                    <td><%= K.percentage %>%</td>
+                                    <% } ) %>
                                 </tr>
+                                
                             </tbody>
                         </table>
                 </div><br>
                 <a href="editkompen1.ejs" class="btn btn-warning mb-3"><i class="fas fa-edit me-2 text-black rounded"></i>Edit Komponen</a>
-                <a href="tambahkompen1.ejs" class="btn btn-warning mb-3"><i class="fas fa-plus-square me-2"></i>Tambah Komponen</a>
+                <a href="/tambahKomponen/<%= id %>" class="btn btn-warning mb-3"><i class="fas fa-plus-square me-2"></i>Tambah Komponen</a>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                   <a href="kompendosen.ejs" class="btn btn-success" type="button">Kembali</a>
                 </div>

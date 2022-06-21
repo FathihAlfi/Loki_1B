@@ -32,7 +32,7 @@
                     <tbody>
                       <% RPS.forEach((R, i) => { %>
                         <tr>
-                            <th class="text-center" scope="row"><%= i+1%></th>
+                            <th class="text-center" scope="row"><%= R.course_plan_id %></th>
                             <td><%= R.course_plan.name %></td>
                             <td class="text-center"><%= R.course_plan.code %></td>
                             <td class="text-center"><%= R.course_plan.credit %></td>
@@ -43,9 +43,9 @@
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                   <li><a class="dropdown-item" href="cpmk1.html">CPMK</a></li>
-                                  <li><a class="dropdown-item" href="/detailRef/<%= R.id %>/<%= R.course_plan.name %>">Referensi</a></li>
-                                  <li><a class="dropdown-item" href="jadwaldosen1.html">Jadwal Pertemuan</a></li>
-                                  <li><a class="dropdown-item" href="lihatkompen1.html">Komponen Nilai</a></li>
+                                  <li><a class="dropdown-item" href="/detailRef/<%= R.course_plan_id %>/<%= R.course_plan.name %>">Referensi</a></li>
+                                  <li><a class="dropdown-item" href="/kosong">Jadwal Pertemuan</a></li>
+                                  <li><a class="dropdown-item" href="/detailKomponen/<%= R.course_plan_id %>/<%= R.course_plan.name %>">Komponen Nilai</a></li>
                                 </ul>
                               </div>
                             </td>

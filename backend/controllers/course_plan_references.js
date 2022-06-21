@@ -1,10 +1,19 @@
 const models = require('../models/index')
 const jwt = require('jsonwebtoken')
+const { course_plans } = require('../models/index')
+const { course_plan_references } = require('.')
 const controllers = {}
 
 controllers.hlmTambahRef = async (req, res) => {
     const id = req.params.id
-    res.render("tambahRef", {id})
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        return res.status(200).json("tidak ada token")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id_dosen = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
+    res.render("tambahRef", {id, nama, NIP})
 }
 
 controllers.hlmDetailRef = async (req, res) => {
@@ -35,7 +44,55 @@ controllers.semuaRef = async (req, res) => {
     const nama = payload.nama
     const NIP = payload.NIP
     //nampilin data ref berdasarkan id dosen
-    res.render("referensi2", { nama, NIP})
+    // models.course_plan_lecturers.hasMany(models.course_plans, {foreignKey: "id"})
+    // models.course_plans.belongsTo(models.course_plan_lecturers, {foreignKey: "id"})
+    // models.course_plan_references.hasMany(models.course_plans, {foreignKey: "id"})
+    // models.course_plans.belongsTo(models.course_plan_references, {foreignKey: "id"})
+    models.course_plans.hasMany(models.course_plan_references, {foreignKey: "course_plan_id"})
+    models.course_plan_references.belongsTo(models.course_plans, {foreignKey: "id"})
+    models.course_plans.hasMany(models.course_plan_lecturers, {foreignKey: "id"})
+    models.course_plan_lecturers.belongsTo(models.course_plans, {foreignKey: "course_plan_id"})
+   
+    // const RPS = await models.course_plan_references.findAll({
+    //     attributes : ['course_plan_id', 'title', 'author', 'publisher', 'year'],
+    //     include : [{
+    //         model : models.course_plans,
+    //         attributes: ['id', 'course_id'], 
+    //         include : [{
+    //             model : models.course_plan_lecturers, 
+    //             attributes: ['id', 'course_plan_id', 'lecturer_id'],
+    //             where : {
+    //                 lecturer_id : id
+    //             }
+    //         }]
+    //     }]
+    // })
+
+    // const ref = await models.course_plan_lecturers.findAll({
+    //     where : {
+    //         lecturer_id : 2
+    //     },
+    //     include : [{
+    //         model : models.course_plans,
+    //         include : [{
+    //             model : models.course_plan_references
+    //         }]
+    //     }]
+    // })
+
+    const ref = await models.course_plan_references.findAll({
+        include : [{
+            model : models.course_plans,
+            include : [{
+                model : models.course_plan_lecturers,
+                where : {
+                    lecturer_id : 2
+                }
+            }]
+        }]
+    })
+    res.render("referensi1", { ref, nama, NIP})
+    // res.json({ref})
 }
 
 controllers.tambahRef = async(req, res) => {
