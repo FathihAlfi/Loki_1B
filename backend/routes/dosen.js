@@ -30,7 +30,7 @@ server.get('/detailKomponen/:id/:name', cekLogin, controllers.course_plan_assess
 server.get('/tambahKomponen/:id', cekLogin, controllers.course_plan_assessments.hlmTambahKomponen)
 server.post('/tambahKomponen/:id', cekLogin, controllers.course_plan_assessments.tambahKomponen)
 server.get('/hapusKomponen/:idHapus/:id/:name', cekLogin, )
-server.get('/editKomponen/:idEdit/:id/:name', cekLogin, )
+server.get('/editKomponen/:idEdit/:id/:name', cekLogin, controllers.course_plan_assessments.hlmEditKomponen)
 server.post('/editKomponen/:idEdit/:id/:name', cekLogin, )
 
 server.get('/detailPertemuan/:id/:name', cekLogin, controllers.course_plan_details.detailPertemuan)
