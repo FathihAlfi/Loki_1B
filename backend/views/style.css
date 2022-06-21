@@ -1,19 +1,16 @@
 .banner {
     background : url("https://blog.cicil.co.id/wp-content/uploads/2020/07/Biaya-Kuliah-UNAND-Universitas-Andalas.png");
     background-size : cover;
-    padding-top : 20%;
-    padding-bottom : 20%;
     color: white;
     text-shadow: 100%;
 }
 
 html, 
 body {
-    height: 108%;
     background : url("https://blog.cicil.co.id/wp-content/uploads/2020/07/Biaya-Kuliah-UNAND-Universitas-Andalas.png");
     background-size : cover;
-    padding-top : 3%;
-    padding-bottom : 3%;
+    text-shadow: 100%;
+    padding-top : 50px;
 }
 
 .global-container {
