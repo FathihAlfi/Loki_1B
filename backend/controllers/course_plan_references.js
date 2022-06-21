@@ -15,6 +15,55 @@ controllers.hlmTambahRef = async (req, res) => {
     res.render("tambahRef", {id, name, nama, NIP})
 }
 
+controllers.hlmEditRef = async (req, res) => {
+    const id = req.params.id
+    const name = req.params.name
+    const idEdit = req.params.idEdit
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        return res.status(200).json("tidak ada token")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id_dosen = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
+
+    const ref = await models.course_plan_references.findOne({
+        where : {
+            id : req.params.idEdit
+        }
+    })
+    res.render("editReferensi", {ref, idEdit, id, name, nama, NIP})
+}
+
+controllers.editRef = async (req, res) => {
+    try {
+        const idEdit = req.params.idEdit
+        const accessToken = req.cookies.accessToken 
+        if (!accessToken)
+            return res.status(200).json("tidak ada token")
+        const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+        const id_dosen = payload.id
+        const nama = payload.nama
+        const NIP = payload.NIP
+
+        const id = req.params.id
+        const name = req.params.name
+        await models.course_plan_references.update({
+            course_plan_id  : req.params.id,
+            title           : req.body.title,
+            author          : req.body.author,
+            publisher       : req.body.publisher,
+            year            : req.body.year,
+            description     : req.body.description
+        },{
+            where : {id : req.params.idEdit}
+        })
+        res.status(200).redirect("/detailRef/"+id+"/"+name)
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 controllers.DetailRef = async (req, res) => {
     const accessToken = req.cookies.accessToken 
     if (!accessToken)
@@ -31,7 +80,7 @@ controllers.DetailRef = async (req, res) => {
             course_plan_id : req.params.id
         }
     })
-    res.render("referensi1", {ref, name, id, nama, NIP})
+    res.render("referensi", {ref, name, id, nama, NIP})
 }
 
 controllers.semuaRef = async (req, res) => {

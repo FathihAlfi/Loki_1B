@@ -20,28 +20,29 @@
                       <div class="col-3"><h6>: <%= name %></h6></div>
                     </div><br>
                 <div class="table shadow mb-4">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr class="table-active text-center">
-                                    <h3 class="text-center">Komponen Penilaian</h3></td>
-                                </tr><br>
-                            </thead>
-                            <tbody>
-                                <tr class="text-center">
-                                  <% komponen.forEach((K) => { %>
-                                    <th><%= K.name %></th>
-                                    <% } ) %>
-                                </tr>
-                                <tr class="text-center">
-                                  <% komponen.forEach((K) => { %>
-                                    <td><%= K.percentage %>%</td>
-                                    <% } ) %>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
+                  <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center" scope="col">No.</th>
+                            <th class="text-center" scope="col">Nama Komponen</th>
+                            <th class="text-center" scope="col">Persentase</th>
+                            <th class="text-center" scope="col">Hapus</th>
+                            <th class="text-center" scope="col">Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% komponen.forEach((K, i) => { %>
+                        <tr>
+                            <td class="text-center" scope="row"><%= i+1 %></td>
+                            <td><%= K.name %></td>
+                            <td><%= K.percentage %></td>
+                            <td class="text-center"><a href="/editKomponen/<%= K.id %>/<%= id %>/<%= name %>"  class="btn btn-warning mb-3"><i class="bi bi-trash-fill" data-toggle="tooltip" title="delete" ></i></a></td>
+                            <td class="text-center"><a href="/editKomponen/<%= K.id %>/<%= id %>/<%= name %>" class="btn btn-warning mb-3"><i class="fas fa-edit bg-warning text-black rounded" data-toggle="tooltip" title="Edit"></a></i></td>  
+                        </tr>
+                        <% } ) %>
+                    </tbody>
+                </table><br>
                 </div><br>
-                <a href="editkompen1.ejs" class="btn btn-warning mb-3"><i class="fas fa-edit me-2 text-black rounded"></i>Edit Komponen</a>
                 <a href="/tambahKomponen/<%= id %>" class="btn btn-warning mb-3"><i class="fas fa-plus-square me-2"></i>Tambah Komponen</a>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                   <a href="kompendosen.ejs" class="btn btn-success" type="button">Kembali</a>

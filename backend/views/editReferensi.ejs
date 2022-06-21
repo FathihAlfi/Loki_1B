@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal Akademik 1B</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/9c1321c239.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <%- include ('modals/headdosen') %>
+    <nav>
+        <div class="row no-gutters mt-5">
+            <%- include ('modals/navbardosen', {nama, NIP}) %>
+            <div class="col-md-10 p-4 pt-4">
+                <h3><i class="fas fa-plus-square me-2"></i>Edit Referensi</h3><hr>
+                <form action="/editRef/<%= idEdit %>/<%= id %>/<%= name %>" method="POST">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead> 
+                            <tr>
+                                <th scope="col">Judul Buku</th>
+                                <th class="text-center"><input value="<%= ref.title %>" name="title" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Penulis</th>
+                                <th class="text-center"><input value="<%= ref.author %>" name="author" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Penerbit</th>
+                                <th class="text-center"><input value="<%= ref.publisher %>" name="publisher" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Tahun</th>
+                                <th class="text-center"><input value="<%= ref.year %>" name="year" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Deskripsi</th>
+                                <th>
+                                    <div>
+                                        <textarea value="<%= ref.description %>" name="description" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                                    </div>
+                                </th>
+                            </tr>
+                            
+                        </thead> 
+                       
+                    </table>
+                        <button type="submit" class="btn btn-primary mb-3">Update</button>
+                        <button type="" class="btn btn-secondary mb-3">Kembali</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

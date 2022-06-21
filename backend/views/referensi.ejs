@@ -36,7 +36,7 @@
                                 <td><%= R.author %>. "<%= R.title %>". <%= R.publisher %></td>
                                 <td class="text-center"><%= R.year %></td>  
                                 <td class="text-center"><a href="/hapusRef/<%= R.id %>/<%= id %>/<%= name %>"  class="btn btn-warning mb-3"><i class="bi bi-trash-fill" data-toggle="tooltip" title="delete" ></i></a></td>
-                                <td class="text-center"><a href="" class="btn btn-warning mb-3"><i class="fas fa-edit bg-warning text-black rounded" data-toggle="tooltip" title="Edit"></a></i></td>  
+                                <td class="text-center"><a href="/editRef/<%= R.id %>/<%= id %>/<%= name %>" class="btn btn-warning mb-3"><i class="fas fa-edit bg-warning text-black rounded" data-toggle="tooltip" title="Edit"></a></i></td>  
                             </tr>
                             <% } ) %>
                         </tbody>
