@@ -23,6 +23,6 @@ server.get('/hapusRef/:id', cekLogin, controllers.course_plan_references.hapusRe
 server.get('/semua')
 server.get('/detailKomponen/:id/:name', cekLogin, controllers.course_plan_assessments.detailKomponen) 
 server.get('/tambahKomponen/:id', cekLogin, controllers.course_plan_assessments.hlmTambahKomponen)
-server.post('/tambahKomponen/:id', cekLogin,)
+server.post('/tambahKomponen/:id', cekLogin, controllers.course_plan_assessments.tambahKomponen)
 
 module.exports = server

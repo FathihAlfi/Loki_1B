@@ -16,23 +16,33 @@
                 <h3><i class="fa-solid fa-award me-2"></i>Komponen Penilaian</h3><hr>
                 <div class="container">
                 <div class="table shadow mb-4">
-                  <table class="table table-striped table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nama Komponen</th>
-                            <th class="text-center"><input name="code" type="tambahrps" id="inputtambahrps" class="form-control"></th>
-                        </tr>
-                        <tr>
-                            <th scope="col">Persentase</th>
-                            <th class="text-center"><input name="name" type="tambahrps" id="inputtambahrps" class="form-control"></th>
-                        </tr>
-                    </thead> 
-                </table>
+                  <form action="/tambahKomponen/<%= id %>" method="POST">
+                    <table class="table table-striped table-bordered table-hover">
+                      <thead>
+                          <tr>
+                              <th scope="col">Nama Komponen</th>
+                              <th class="text-center">
+                                <select name="name" id=""class="form-select" aria-label="Default select example">
+                                  <option value="{data:['Tugas Besar','1']}">Tugas Besar</option>
+                                  <option value="">UTS</option>
+                                  <option value="">UAS</option>
+                                  <option value="">Kuis</option>
+                                  <option value="">Tugas</option>
+                                  <option value="">Kehadiran</option>
+                                </select>
+                              </th>
+                          </tr>
+                          <tr>
+                              <th scope="col">Persentase</th>
+                              <th class="text-center"><input name="percentage" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                          </tr>
+                      </thead> 
+                  </table>
                 </div>
-                <a href="savekompen1.ejs" class="btn btn-danger mb-3"><i class="fa-solid fa-bookmark me-2"></i>Simpan</a>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <a href="lihatkompen1.ejs" class="btn btn-success" type="button">Kembali</a>
+                  <button type="submit" class="btn btn-primary mb-3">Simpan</button>
+                  <button type="" class="btn btn-secondary mb-3">Kembali</button>
                 </div>
+              </form>
             </div>
         </div>
     </nav>

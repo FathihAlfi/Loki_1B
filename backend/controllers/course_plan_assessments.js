@@ -1,16 +1,24 @@
 const models = require('../models/index')
 const jwt = require('jsonwebtoken')
+const { json } = require('body-parser')
 const controllers = {}
 
 controllers.hlmTambahKomponen = async (req, res) => {
+    const id = req.params.id
     const accessToken = req.cookies.accessToken 
     if (!accessToken)
         return res.status(200).json("tidak ada token")
     const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
-    const id = payload.id
+    const id_dosen = payload.id
     const nama = payload.nama
     const NIP = payload.NIP
-    res.render("tambahKomponen", {nama, NIP})
+    res.render("tambahKomponen", {nama, NIP, id})
+}
+
+controllers.tambahKomponen = async (req, res) => {
+    const data = req.body.name
+    const test = JSON.stringify(data)
+    res.json({data})
 }
 
 controllers.detailKomponen = async (req, res) => {
