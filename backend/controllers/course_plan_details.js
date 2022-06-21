@@ -18,7 +18,27 @@ controllers.detailPertemuan = async (req, res) => {
             course_plan_id : req.params.id
         }
     })
-    res.render("pertemuandosen1", {pertemuan, name, id, nama, NIP})
+    res.render("pertemuan", {pertemuan, name, id, nama, NIP})
+}
+
+controllers.hlmEditPertemuan = async (req, res) => {
+    const id = req.params.id
+    const name = req.params.name
+    const idEdit = req.params.idEdit
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        return res.status(200).json("tidak ada token")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id_dosen = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
+
+    const pertemuan = await models.course_plan_details.findOne({
+        where : {
+            id : req.params.idEdit
+        }
+    })
+    res.render("editPertemuan", {pertemuan, idEdit, id, name, nama, NIP})
 }
 
 controllers.hlmTambahPertemuan = async (req, res) => {
@@ -44,6 +64,34 @@ controllers.tambahPertemuan = async (req, res) => {
             material            : req.body.material,
             method              : req.body.method,
             student_experience  : req.body.student_experience,
+        })
+        res.status(200).redirect("/detailPertemuan/"+id+"/"+name)
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+controllers.editPertemuan = async (req, res) => {
+    try {
+        const idEdit = req.params.idEdit
+        const accessToken = req.cookies.accessToken 
+        if (!accessToken)
+            return res.status(200).json("tidak ada token")
+        const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+        const id_dosen = payload.id
+        const nama = payload.nama
+        const NIP = payload.NIP
+
+        const id = req.params.id
+        const name = req.params.name
+
+        await models.course_plan_details.update({
+            week                : req.body.week,
+            material            : req.body.material,
+            method              : req.body.method,
+            student_experience  : req.body.student_experience,
+        },{
+            where : {id : req.params.idEdit}
         })
         res.status(200).redirect("/detailPertemuan/"+id+"/"+name)
     } catch (err) {

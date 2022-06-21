@@ -25,7 +25,7 @@ server.get('/hapusRef/:idHapus/:id/:name', cekLogin, controllers.course_plan_ref
 server.get('/editRef/:idEdit/:id/:name', cekLogin, controllers.course_plan_references.hlmEditRef)
 server.post('/editRef/:idEdit/:id/:name', cekLogin, controllers.course_plan_references.editRef)
 
-server.get('/semuaKomponen', cekLogin, controllers.course_plan_assessments.semuaKomponen)
+server.get('/semuaKomponen', cekLogin, controllers.course_plan_assessments.semuaKomponen) //komponen kelar semua
 server.get('/detailKomponen/:id/:name', cekLogin, controllers.course_plan_assessments.detailKomponen) 
 server.get('/tambahKomponen/:id/:name', cekLogin, controllers.course_plan_assessments.hlmTambahKomponen)
 server.post('/tambahKomponen/:id/:name', cekLogin, controllers.course_plan_assessments.tambahKomponen)
@@ -33,9 +33,13 @@ server.get('/hapusKomponen/:idHapus/:id/:name', cekLogin, controllers.course_pla
 server.get('/editKomponen/:idEdit/:id/:name', cekLogin, controllers.course_plan_assessments.hlmEditKomponen)
 server.post('/editKomponen/:idEdit/:id/:name', cekLogin, controllers.course_plan_assessments.editKomponen)
 
+server.get('/semuaPertemuan', cekLogin,)
 server.get('/detailPertemuan/:id/:name', cekLogin, controllers.course_plan_details.detailPertemuan)
 server.get('/tambahPertemuan/:id/:name', cekLogin, controllers.course_plan_details.hlmTambahPertemuan)
 server.post('/tambahPertemuan/:id/:name', cekLogin, controllers.course_plan_details.tambahPertemuan)
+server.get('/hapusPertemuan/:idHapus/:id/:name', cekLogin, )
+server.get('/editPertemuan/:idEdit/:id/:name', cekLogin, controllers.course_plan_details.hlmEditPertemuan)
+server.post('/editPertemuan/:idEdit/:id/:name', cekLogin, controllers.course_plan_details.editPertemuan)
 
 server.get('/detailCPMK/:id/:name', cekLogin, controllers.course_los.detailCPMK)
 server.get('/tambahCPMK/:id/:name', cekLogin, controllers.course_los.hlmTambahCPMK)
