@@ -35,16 +35,17 @@
                                 <th class="text-center" scope="row"><%= i+1 %></th>
                                 <td><%= R.author %>. "<%= R.title %>". <%= R.publisher %></td>
                                 <td class="text-center"><%= R.year %></td>  
-                                <td class="text-center"><a href="/hapusRef/<%= R.id %>"  class="btn btn-warning mb-3"><i class="bi bi-trash-fill" data-toggle="tooltip" title="delete" ></i></a></td>
+                                <td class="text-center"><a href="/hapusRef/<%= R.id %>/<%= id %>/<%= name %>"  class="btn btn-warning mb-3"><i class="bi bi-trash-fill" data-toggle="tooltip" title="delete" ></i></a></td>
                                 <td class="text-center"><a href="" class="btn btn-warning mb-3"><i class="fas fa-edit bg-warning text-black rounded" data-toggle="tooltip" title="Edit"></a></i></td>  
                             </tr>
                             <% } ) %>
                         </tbody>
                     </table>
                 </form>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                
+                    <a href="/tambahRef/<%= id %>/<%= name %>" class="btn btn-warning"><i class="fas fa-plus-square me-2"></i>Tambah Referensi</a>
                     <a href="refdosen.ejs" class="btn btn-success" type="button">Kembali</a>
-                </div>
+                
             </div>
         </div>
     </nav>

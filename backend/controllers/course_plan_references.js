@@ -1,11 +1,10 @@
 const models = require('../models/index')
 const jwt = require('jsonwebtoken')
-const { course_plans } = require('../models/index')
-const { course_plan_references } = require('.')
 const controllers = {}
 
 controllers.hlmTambahRef = async (req, res) => {
     const id = req.params.id
+    const name = req.params.name
     const accessToken = req.cookies.accessToken 
     if (!accessToken)
         return res.status(200).json("tidak ada token")
@@ -13,7 +12,7 @@ controllers.hlmTambahRef = async (req, res) => {
     const id_dosen = payload.id
     const nama = payload.nama
     const NIP = payload.NIP
-    res.render("tambahRef", {id, nama, NIP})
+    res.render("tambahRef", {id, name, nama, NIP})
 }
 
 controllers.DetailRef = async (req, res) => {
@@ -97,6 +96,8 @@ controllers.semuaRef = async (req, res) => {
 
 controllers.tambahRef = async(req, res) => {
     try {
+        const id = req.params.id
+        const name = req.params.name
         await models.course_plan_references.create({
             course_plan_id  : req.params.id,
             title           : req.body.title,
@@ -105,7 +106,7 @@ controllers.tambahRef = async(req, res) => {
             year            : req.body.year,
             description     : req.body.description
         })
-        res.json({msg: "Berhasil menambahkan referensi mata kuliah"});
+        res.status(200).redirect("/detailRef/"+id+"/"+name)
     } catch (err) {
         console.log(err);
     }
@@ -113,12 +114,14 @@ controllers.tambahRef = async(req, res) => {
 
 controllers.hapusRef = async(req, res) => {
     try {
+        const id = req.params.id
+        const name = req.params.name
         await models.course_plan_references.destroy({
             where : {
-                id   : req.params.id
+                id   : req.params.idHapus
             }
         })
-        res.redirect("/homeDosen")
+        res.status(200).redirect("/detailRef/"+id+"/"+name) 
     } catch (err) {
         console.log(err);
     }

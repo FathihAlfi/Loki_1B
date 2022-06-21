@@ -16,51 +16,36 @@
                 <h3><i class="fa-solid fa-calendar-days me-2"></i>Jadwal Pertemuan</h3><hr>
                 <div class="container">
                     <div class="row">
-                        <div class="col-2"><h6>Kode Mata Kuliah</h6></div>
-                        <div class="col-2"><h6>: JSI62125</h6></div>
-                      </div>
-                    <div class="row">
                       <div class="col-2"><h6>Nama Mata Kuliah</h6></div>
-                      <div class="col-3"><h6>: Pemrograman Web</h6></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-2"><h6>Jadwal Kelas</h6></div>
-                        <div class="col-2"><h6>: Senin/13.30-16.00</h6></div>
-                      </div><br>
+                      <div class="col-3"><h6>: <%= name %></h6></div>
+                    </div><br>
                 </div>
                 <div class="card shadow mb-4">
                     <div class="card-body">
+                      <form action="/tambahPertemuan/<%= id %>/<%= name %>" method="POST">
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th scope="col">ID</th>
-                                    <th class="text-center"><input name="course_id" type="tambahrps" id="inputtambahrps" class="form-control"></th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">ID Mata Kuliah</th>
-                                    <th class="text-center"><input name="course_id" type="tambahrps" id="inputtambahrps" class="form-control"></th>
-                                </tr>
-                                <tr>
                                     <th scope="col">Minggu Pertemuan</th>
-                                    <th class="text-center"><input name="code" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                                    <th class="text-center"><input name="week" type="tambahrps" id="inputtambahrps" class="form-control"></th>
                                 </tr>
                                 <tr>
                                     <th scope="col">Materi</th>
-                                    <th class="text-center"><input name="name" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                                    <th class="text-center"><input name="material" type="tambahrps" id="inputtambahrps" class="form-control"></th>
                                 </tr>
                                 <tr>
                                     <th scope="col">Metode</th>
-                                    <th class="text-center"><input name="alias_name" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                                    <th class="text-center"><input name="method" type="tambahrps" id="inputtambahrps" class="form-control"></th>
                                 </tr>
                                 <tr>
                                     <th scope="col">Pengalaman Belajar Mahasiswa</th>
-                                    <th class="text-center"><input name="alias_name" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                                    <th class="text-center"><textarea name="student_experience" type="tambahrps" id="inputtambahrps" class="form-control">Pengalaman Belajar</textarea></th>
                                 </tr>
                             </thead> 
                         </table>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                          <a href="jadwaldosen1.ejs" class="btn btn-success" type="button">Kembali</a>
-                        </div>
+                          <button type="submit" class="btn btn-primary mb-3">Simpan</button>
+                          <button type="" class="btn btn-secondary mb-3">Kembali</button>
+                        </form>
                     </div>
                 </div><br>
             </div>

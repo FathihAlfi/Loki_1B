@@ -21,6 +21,36 @@ controllers.detailPertemuan = async (req, res) => {
     res.render("pertemuandosen1", {pertemuan, name, id, nama, NIP})
 }
 
+controllers.hlmTambahPertemuan = async (req, res) => {
+    const id = req.params.id
+    const name = req.params.name
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        return res.status(200).json("tidak ada token")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id_dosen = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
+    res.render("tambahPertemuan", {id, nama, name, NIP})
+}
+
+controllers.tambahPertemuan = async (req, res) => {
+    try {
+        const id = req.params.id
+        const name = req.params.name
+        await models.course_plan_details.create({
+            course_plan_id      : req.params.id,
+            week                : req.body.week,
+            material            : req.body.material,
+            method              : req.body.method,
+            student_experience  : req.body.student_experience,
+        })
+        res.status(200).redirect("/detailPertemuan/"+id+"/"+name)
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 controllers.tambahPertemuanM = async(req, res) => {
     const matkul = await models.course_plans.findOne({
         where : {
