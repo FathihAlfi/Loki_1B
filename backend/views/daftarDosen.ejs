@@ -27,7 +27,8 @@
                                 <th class="text-center" scope="col">No</th>
                                 <th class="text-center" scope="col">Nama Dosen</th>
                                 <th class="text-center" scope="col">NIP</th>
-                                <th class="text-center" scope="col">Pilih</th>
+                                <th class="text-center" scope="col">Telepon</th>
+                                <th class="text-center" scope="col">Pilih</th>  
                             </tr>
                         </thead>
                         <tbody>
@@ -37,7 +38,7 @@
                                 <td><%= A.lecturer.name %></td>
                                 <td class="text-center"><%= A.lecturer.reg_id %></td>
                                 <td class="text-center"><%= A.lecturer.phone %></td>
-                                <td></td>
+                                <td class="text-center"><i class="fas fa-plus-square btn btn-primary me-2"></i></td>
                             </tr>
                             <% } ) %>
                         </tbody>
