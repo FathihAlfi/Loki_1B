@@ -32,18 +32,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <% akses.forEach((A, i) => { %>
+                            <% dosen.forEach((D, i) => { %>
                             <tr>
                                 <td class="text-center" scope="row"><%= i+1 %></td>
-                                <td><%= A.lecturer.name %></td>
-                                <td class="text-center"><%= A.lecturer.reg_id %></td>
-                                <td class="text-center"><%= A.lecturer.phone %></td>
-                                <td class="text-center"><i class="fas fa-plus-square btn btn-primary me-2"></i></td>
+                                <td><%= D.name %></td>
+                                <td class="text-center"><%= D.reg_id %></td>
+                                <td class="text-center"><%= D.phone %></td>
+                                <td class="text-center"><a href="/tambahAksesDosen/<%= D.id %>/<%= id %>/<%= name %>"><i class="fas fa-plus-square btn btn-primary me-2"></i></a></td>
                             </tr>
                             <% } ) %>
                         </tbody>
                     </table><br>
-                    <a href="tambahdosen.ejs" class="btn btn-warning"><i class="fas fa-plus-square me-2"></i>Tambah Dosen</a>
                     <a href="aksesdosen.ejs" class="btn btn-success" type="button">Kembali</a>
                 </div><br>
             </div>

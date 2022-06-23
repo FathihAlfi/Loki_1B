@@ -16,43 +16,32 @@
                 <h3><i class="fa-solid fa-universal-access me-2"></i>Hak Akses Dosen</h3><hr>
                 <div class="container">
                     <div class="row">
-                        <div class="col-2"><h6>Kode Mata Kuliah</h6></div>
-                        <div class="col-2"><h6>: JSI62125</h6></div>
-                      </div>
-                    <div class="row">
                       <div class="col-2"><h6>Nama Mata Kuliah</h6></div>
-                      <div class="col-3"><h6>: Pemrograman Web</h6></div>
+                      <div class="col-3"><h6>: <%= name %></h6></div>
                     </div>
                 </div><br>
                 <div>
+                <form action="/tambahAksesDosen/<%= idDosen %>/<%= id %>/<%= name %>" method="POST">
                     <table class="table table-bordered table-success table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">ID</th>
-                                <th class="text-center"><input name="course_id" type="tambahrps" id="inputtambahrps" class="form-control"></th>
-                            </tr>
-                            <tr>
-                                <th scope="col">Nama Dosen</th>
-                                <th class="text-center"><input name="course_id" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                                <th scope="col">Nama</th>
+                                <th class="text-center"><input value="<%= dosen.name %>" name="name" type="tambahrps" id="inputtambahrps" class="form-control" readonly></th>
                             </tr>
                             <tr>
                                 <th scope="col">NIP</th>
-                                <th class="text-center"><input name="code" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                                <th class="text-center"><input value="<%= dosen.reg_id %>" name="reg_id" type="tambahrps" id="inputtambahrps" class="form-control" readonly></th>
                             </tr>
                             <tr>
                                 <th scope="col">Telepon</th>
-                                <th class="text-center"><input name="name" type="tambahrps" id="inputtambahrps" class="form-control"></th>
-                            </tr>
-                            <tr>
-                                <th scope="col">Status</th>
-                                <th class="text-center"><input name="alias_name" type="tambahrps" id="inputtambahrps" class="form-control"></th>
+                                <th class="text-center"><input value="<%= dosen.phone %>" name="phone" type="tambahrps" id="inputtambahrps" class="form-control" readonly></th>
                             </tr>
                         </thead>
                     </table> 
-                    <a href="warningdosen1.ejs" class="btn btn-danger mb-3"><i class="fa-solid fa-bookmark me-2"></i>Simpan</a>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                        <a href="aksesdosen1.ejs" class="btn btn-success" type="button">Kembali</a>
+                        <button type="submit" class="btn btn-primary mb-3">Simpan</button>
+                        <button type="" class="btn btn-secondary mb-3">Kembali</button>
                     </div>
+                </form>
                 </div><br>
             </div>
         </div>
