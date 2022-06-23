@@ -9,5 +9,8 @@ server.get('/admin', (req, res) => {
 })
 server.post('/loginAdmin', controllers.auth.loginAdmin)
 server.get('/homeAdmin', cekLogin, controllers.admin.home)
+server.get('/detailAksesDosen/:id/:name', cekLogin, controllers.admin.detailAksesDosen)
+server.get('/tambahAksesDosen/:id/:name', cekLogin, )
+server.post('/tambahAksesDosen/:id/:name', cekLogin, )
 
 module.exports = server
