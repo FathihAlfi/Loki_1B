@@ -34,18 +34,21 @@
                             <th class="text-center" scope="col">No.</th>
                             <th class="text-center" scope="col">Nama Mata Kuliah</th>
                             <th class="text-center" scope="col">Kode Mata Kuliah</th>
-                            <th class="text-center" scope="col">Jumlah SKS</th>
-                            <th class="text-center" scope="col">Lihat RPS</th>
-                            <th class="text-center" scope="col">Cetak RPS</th>
+                            <th class="text-center" scope="col">SKS</th>
+                            <th class="text-center" scope="col">Sem</th>
+                            <th class="text-center" scope="col">Lihat</th>
+                            <th class="text-center" scope="col">Cetak</th>
                             <th class="text-center" scope="col">Detail</th>
                         </tr>
                     </thead>
                     <tbody>
+                      <% RPS.forEach((R, i) => { %>
                         <tr>
-                            <th class="text-center" scope="row">1</th>
-                            <td>Pemrograman Web</td>
-                            <td class="text-center">JSI62125</td>
-                            <td class="text-center">3</td>
+                            <th class="text-center" scope="row"><%= i+1 %></th>
+                            <td><%= R.name %></td>
+                            <td class="text-center"><%= R.code %></td>
+                            <td class="text-center"><%= R.credit %></td>
+                            <td class="text-center"><%= R.semester %></td>
                             <td class="text-center"><a href="rpspwebadmin.html"><i class="fa-solid fa-eye bg-warning p-2 text-black rounded" data-toggle="tooltip" title="Open"></i></a></td>
                             <td class="text-center"><a href="printrpsadmin.html"><i class="fa-solid fa-print bg-warning p-2 text-black rounded" data-toggle="tooltip" title="Print"></i></a></td>
                             <td class="text-center">
@@ -61,6 +64,7 @@
                               </div>
                             </td>
                         </tr>
+                        <% } ) %>
                     </tbody>
                 </table>
                 <div class="d-grid gap-1 justify-content-md-end">

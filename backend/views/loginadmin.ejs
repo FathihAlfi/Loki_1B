@@ -18,18 +18,16 @@
                     <h1 class="card-title text-center">Portal Admin</h1>
                 </div>
                 <div class="card-text">
-                    <form>
+                    <form action="/loginAdmin" method="POST">
                         <div class="mb-3">
                           <label for="exampleInputNIP1" class="form-label">NIP</label>
-                          <input type="nip" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          <input type="nip" name="NIP" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1">
+                          <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                         </div>
-                        <a href="/homeAdmin">
-                            <button type="button" class="btn btn-dark">Log In</button>
-                        </a>
+                          <button type="submit" class="btn btn-dark">Log In</button>
                       </form>
                 </div>
             </div>

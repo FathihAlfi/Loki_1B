@@ -9,6 +9,7 @@ const auth = require('./auth.js')
 const RPS = require('./RPS')
 const mhs = require('./mhs.js')
 const dosen = require('./dosen.js')
+const admin = require('./admin.js')
 
 const controllers = {}
 
@@ -23,5 +24,6 @@ controllers.auth = auth
 controllers.RPS = RPS
 controllers.mhs = mhs
 controllers.dosen = dosen
+controllers.admin = admin
 
 module.exports = controllers
