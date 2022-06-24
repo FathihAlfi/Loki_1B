@@ -29,14 +29,14 @@ controllers.tambahRPS = async (req, res) => {
     const {course_id, code, name, alias_name, credit, semester, description} = req.body
     try {
         await models.course_plans.create({
-            course_id       : course_id,
+            course_id       : req.body.course_id,
             rev             : 0,
-            code            : code,
-            name            : name,
-            alias_name      : alias_name,
-            credit          : credit,
-            semester        : semester,
-            description     : description
+            code            : req.body.code,
+            name            : req.body.name,
+            alias_name      : req.body.alias_name,
+            credit          : req.body.credit,
+            semester        : req.body.semester,
+            description     : req.body.description
         })
         res.status(200).redirect("/homeDosen")
     } catch (err) {

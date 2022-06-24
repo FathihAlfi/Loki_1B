@@ -18,7 +18,7 @@ server.post('/tambahRPS', controllers.RPS.tambahRPS)
 server.put('/revisiRPS', cekDosenPengampu, controllers.RPS.revisiRPS)
 
 server.get('/semuaRef', cekLogin, controllers.course_plan_references.semuaRef) //ref kelar semua
-server.get('/detailRef/:id/:name', cekLogin, controllers.course_plan_references.DetailRef)
+server.get('/detailRef/:id/:name', cekLogin, controllers.course_plan_references.DetailRef) 
 server.get('/tambahRef/:id/:name', cekLogin, controllers.course_plan_references.hlmTambahRef)
 server.post('/tambahRef/:id/:name', cekLogin, controllers.course_plan_references.tambahRef)
 server.get('/hapusRef/:idHapus/:id/:name', cekLogin, controllers.course_plan_references.hapusRef)
