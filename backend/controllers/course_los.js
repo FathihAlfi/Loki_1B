@@ -56,6 +56,7 @@ controllers.hlmEditCPMK = async (req, res) => {
 
 controllers.tambahCPMK = async (req, res) => {
     try {
+        const idTerakhir = await models.course_los.max("id")
         const id = req.params.id
         const name = req.params.name
         await models.course_los.create({
@@ -64,6 +65,10 @@ controllers.tambahCPMK = async (req, res) => {
             type            : 1,
             code            : "NULL",
             parent_id       : 0
+        })
+        await models.course_lo_details.create({
+            curriculum_lo_id    : req.body.curriculum_lo_id,
+            course_lo_id        : idTerakhir+1
         })
         res.status(200).redirect("/detailCPMK/"+id+"/"+name)
     } catch (err) {

@@ -6,7 +6,8 @@ var course_lo_details = db.define ('course_lo_details', {
     id : {
         type        : DataTypes.BIGINT,
         allownull   : false,
-        primaryKey  : true
+        primaryKey  : true,
+        autoIncrement   : true
     },
     curriculum_lo_id : {
         type        : DataTypes.BIGINT,
