@@ -45,6 +45,8 @@ server.get('/semuaCPMK', cekLogin, controllers.course_los.semuaCPMK) //CPMK kela
 server.get('/detailCPMK/:id/:name', cekLogin, controllers.course_los.detailCPMK)
 server.get('/tambahCPMK/:id/:name', cekLogin, controllers.course_los.hlmTambahCPMK)
 server.post('/tambahCPMK/:id/:name', cekLogin, controllers.course_los.tambahCPMK)
+server.get('/tambahCPLkeCPMK/:id/:name', cekLogin, controllers.course_los.hlmTambahCPLkeCPMK)
+server.post('/tambahCPLkeCPMK/idTambah/:id/:name', cekLogin, controllers.course_los.tambahCPLkeCPMK)
 server.get('/hapusCPMK/:idHapus/:id/:name', cekLogin, controllers.course_los.hapusCPMK)
 server.get('/editCPMK/:idEdit/:id/:name', cekLogin, controllers.course_los.hlmEditCPMK)
 server.post('/editCPMK/:idEdit/:id/:name', cekLogin, controllers.course_los.editCPMK)

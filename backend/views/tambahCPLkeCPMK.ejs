@@ -20,14 +20,9 @@
                       <div class="col-3"><h6>: <%= name %></h6></div>
                     </div><br>
                 <div class="table shadow mb-4">
-                  <form action="/tambahCPLkeCPMK/<%= id %>/<%= name %>" method="POST">
+                  <form action="/tambahCPMK/<%= id %>/<%= name %>" method="POST">
                   <table class="table table-striped table-bordered table-hover">
                   <thead>
-                    <tr>
-                        <th scope="col">Nama</th>
-                        <th class="text-center"><textarea name="name" type="tambahrps" id="inputtambahrps" class="form-control" required></textarea> </th>
-                    </tr>
-                    <tr>
                       <th>CPL</th>
                       <th><select name="curriculum_lo_id" id="" class="form-select" aria-label="Default select example" required>
                         <option value="1">Mengidentifikasi, memformulasikan dan memecahkan permasalahan kebutuhan informasi dari suatu organisasi</option>
@@ -39,6 +34,7 @@
                   </table>
                 </div><br>
                   <button type="submit" class="btn btn-primary mb-3">Simpan</button>
+                  <button type="submit" class="btn btn-primary mb-3">Simpan & Tambah CPL</button>
                   <a href="/detailCPMK/<%=id%>/<%=name%>" class="btn btn-secondary mb-3">Kembali</a>
                   
                 </div>
