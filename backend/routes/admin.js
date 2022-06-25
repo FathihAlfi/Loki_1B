@@ -14,6 +14,8 @@ server.get('/tambahAksesDosen/:id/:name', cekLogin, controllers.admin.hlmTambahA
 server.get('/tambahAksesDosen/:idDosen/:id/:name', cekLogin, controllers.admin.cekTambahAksesDosen)
 server.post('/tambahAksesDosen/:idDosen/:id/:name', cekLogin, controllers.admin.tambahAksesDosen)
 
+server.get('/detailCPMKdanCPL', cekLogin, )
+
 server.get('/semuaAksesDosen', cekLogin, controllers.admin.semuaAksesDosen)
 
 module.exports = server

@@ -35,6 +35,7 @@ controllers.hlmTambahCPMK = async (req, res) => {
 }
 
 controllers.hlmTambahCPLkeCPMK = async (req, res) => {
+    const idTerakhir = await models.course_los.max("id")
     const id = req.params.id
     const name = req.params.name
     const accessToken = req.cookies.accessToken 
@@ -90,8 +91,9 @@ controllers.tambahCPMK = async (req, res) => {
             curriculum_lo_id    : req.body.curriculum_lo_id,
             course_lo_id        : idTerakhir+1
         })
-        // res.status(200).redirect("/detailCPMK/"+id+"/"+name)
-        res.render("tambahCPLkeCPMK", {idTerakhir, id, name, nama, NIP})
+        
+        res.status(200).redirect("/detailCPMK/"+id+"/"+name)
+        // res.render("tambahCPLkeCPMK", {idTerakhir, id, name, nama, NIP})
     } catch (err) {
         console.log(err);
     }
@@ -101,7 +103,9 @@ controllers.tambahCPLkeCPMK = async (req, res) => {
     try {
         const id = req.params.id
         const name = req.params.name
-        const accessToken = req.cookies.accessToken 
+        const idTerakhir = req.params.idTambah
+        const idTerbaru = idTerakhir +1
+        const accessToken = req.cookies.accessToken
         if (!accessToken)
             return res.status(200).json("tidak ada token")
         const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
@@ -111,9 +115,9 @@ controllers.tambahCPLkeCPMK = async (req, res) => {
 
         await models.course_lo_details.create({
             curriculum_lo_id    : req.body.curriculum_lo_id,
-            course_lo_id        : idTerakhir+1
+            course_lo_id        : req.params.idtambah
         })
-        res.status(200).redirect("/detailCPMK/"+id+"/"+name)
+        res.status(200).redirect("/detailCPMK/"+id+"/"+name) 
     } catch (err) {
         console.log(err)
     }
