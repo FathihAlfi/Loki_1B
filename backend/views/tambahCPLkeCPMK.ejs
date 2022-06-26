@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal Akademik 1B</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/9c1321c239.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <%- include ('modals/headdosen') %>
+    <nav>
+        <div class="row no-gutters mt-5">
+          <%- include ('modals/navbardosen', {nama, NIP}) %>
+            <div class="col-md-10 p-4 pt-4">
+                <h3><i class="fa-solid fa-map me-2"></i>CPMK</h3><hr>
+                <div class="container">
+                    <div class="row">
+                      <div class="col-2"><h6>Nama Mata Kuliah</h6></div>
+                      <div class="col-3"><h6>: <%= name %></h6></div>
+                    </div><br>
+                <div class="table shadow mb-4">
+                  <form action="/tambahCPLkeCPMK/<%= idTerakhir %>/<%= id %>/<%= name %>" method="POST">
+                  <table class="table table-striped table-bordered table-hover">
+                  <thead>
+                      <th>CPL</th>
+                      <th><select name="curriculum_lo_id" id="" class="form-select" aria-label="Default select example" required>
+                        <option value="1">Mengidentifikasi, memformulasikan dan memecahkan permasalahan kebutuhan informasi dari suatu organisasi</option>
+                        <option value="2">Mengintegrasikan solusi berbasis teknologi informasi secara efektif pada suatu organisasi</option>
+                        <option value="3">Menerapkan konsep-konsep dasar dalam merencanakan Sistem Informasi, merancang Sistem Informasi, membangun Sistem Informasi, mengoperasikan Sistem Informasi, dan mengevaluasi Sistem Informasi</option>
+                      </select></th>
+                    </tr>
+                  </thead> 
+                  </table>
+                </div><br>
+                  <button type="submit" class="btn btn-primary mb-3">Simpan & Tambah CPL</button>
+                  <a href="/detailCPMK/<%=id%>/<%=name%>" class="btn btn-secondary mb-3">Selesai</a>
+                  
+                </div>
+              </form>
+            </div>
+        </div>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

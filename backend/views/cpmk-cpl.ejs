@@ -15,14 +15,6 @@
             <div class="col-md-10 p-4 pt-4">
               <h3><i class="fa-solid fa-list me-2"></i>CPMK-CPL</h3><hr>
               <div class="container">
-                  <div class="row">
-                      <div class="col-2"><h6>Tahun Akademik</h6></div>
-                      <div class="col-2"><h6>: 2021/2022</h6></div>
-                    </div>
-                  <div class="row">
-                      <div class="col-2"><h6>Semester</h6></div>
-                      <div class="col-3"><h6>: Genap</h6></div>
-                    </div><br>
               </div>
               <div class="card shadow mb-4">
                 <div class="card-body">
@@ -41,13 +33,15 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <% RPS.forEach((R, i) => { %>
                             <tr>
-                                <th class="text-center" scope="row">1</th>
-                                <td>Pemrograman Web</td>
-                                <td class="text-center">JSI62125</td>
-                                <td class="text-center">3</td>
-                                <td class="text-center"><a href="cpmk-cpl1.html"><i class="fa-solid fa-eye bg-warning p-2 text-black rounded" data-toggle="tooltip" title="Open"></i></a></td>
+                                <th class="text-center" scope="row"><%= i+1 %></th>
+                                <td><%= R.name %></td>
+                                <td class="text-center"><%= R.code %></td>
+                                <td class="text-center"><%= R.credit %></td>
+                                <td class="text-center"><a href="/detailCPMKdanCPL/<%= R.id %>/<%= R.name %>"><i class="fa-solid fa-eye bg-warning p-2 text-black rounded" data-toggle="tooltip" title="Open"></i></a></td>
                             </tr>
+                            <% } ) %>
                         </tbody>
                     </table>
                 </div>
