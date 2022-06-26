@@ -147,7 +147,48 @@ controllers.detailCPMKdanCPL = async (req, res) => {
     const nama = payload.nama
     const NIP = payload.NIP
 
-    res.render("cpmk-cpl1", {})
+    models.course_los.hasMany(models.course_lo_details, {foreignKey : "id"})
+    models.course_lo_details.belongsTo(models.course_los, {foreignKey : "course_lo_id"})
+
+    const CPMK = await models.course_los.findAll({
+        where : {
+            course_plan_id : 2
+        },
+        include : {
+            model : models.course_lo_details
+        }
+    })
+    const CPL = await models.course_lo_details.findAll({
+        include : {
+            model: models.course_los,
+            where : {
+                course_plan_id : 2
+            }
+        }
+    })
+    // res.json({CPL})
+    res.render("cpmk-cpl1", {CPL})
+}
+
+controllers.detailRPS = async (req, res) => {
+    const id = req.params.id
+    const name = req.params.name
+    
+    models.course_los.hasMany(models.course_lo_details, {foreignKey : "id"})
+    models.course_lo_details.belongsTo(models.course_los, {foreignKey : "course_lo_id"})
+    
+    const RPS = await models.course_plans.findOne({
+        where : {id : 2}
+    })
+    const CPL = await models.course_lo_details.findAll({
+        include : {
+            model: models.course_los,
+            where : {
+                course_plan_id : 2
+            }
+        }
+    })
+    res.render("rpspweb", {RPS, CPL})
 }
 
 module.exports = controllers

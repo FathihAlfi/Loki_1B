@@ -496,11 +496,11 @@ body { margin-left: 0.7in; margin-right: 0.7in; margin-top: 0.75in; margin-botto
             <td class="column12 style141 s">Tgl Penyusunan</td>
           </tr>
           <tr class="row5">
-            <td class="column0 style17 s style19" colspan="5">Pemrograman Web</td>
+            <td class="column0 style17 s style19" colspan="5"><%= RPS.name %></td>
             <td class="column5 style17 null style19" colspan="2"></td>
             <td class="column7 style17 null style19" colspan="3"></td>
-            <td class="column10 style3 n">3</td>
-            <td class="column11 style3 n">4</td>
+            <td class="column10 style3 n"><%= RPS.credit %></td>
+            <td class="column11 style3 n"><%= RPS.semester %></td>
             <td class="column12 style4 null"></td>
           </tr>
           <tr class="row6">
@@ -535,34 +535,12 @@ body { margin-left: 0.7in; margin-right: 0.7in; margin-top: 0.75in; margin-botto
             <td class="column2 style44 s style46" colspan="4">CP Mata Kuliah             </td>
             <td class="column6 style37 null style39" colspan="7"></td>
           </tr>
+          <% CPL.forEach((C, i) => { %>
           <tr class="row14">
-            <td class="column2 style2 n">1</td>
+            <td class="column2 style2 n"><%= i+1 %></td>
             <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menjelaskan konsep dasar dan komponen aplikasi berbasis web (CP-1, CP-2)</td>
           </tr>
-          <tr class="row15">
-            <td class="column2 style2 n">2</td>
-            <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menggunakan salah satu technology stack untuk membangun aplikasi berbasis web (CP-1, CP-2)</td>
-          </tr>
-          <tr class="row16">
-            <td class="column2 style2 n">3</td>
-            <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menggunakan pemograman asynchronous . (CP-2, CP-3)</td>
-          </tr>
-          <tr class="row17">
-            <td class="column2 style2 n">4</td>
-            <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menerapkan keamanan untuk situs web . (CP-2, CP-3)</td>
-          </tr>
-          <tr class="row18">
-            <td class="column2 style2 n">5</td>
-            <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menggunakan dan mendesain format data JSON. (CP-2, CP-3)</td>
-          </tr>
-          <tr class="row19">
-            <td class="column2 style2 n">6</td>
-            <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu deploy aplikasi web ke internet. (CP-2)</td>
-          </tr>
-          <tr class="row20">
-            <td class="column2 style2 n">7</td>
-            <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu mendemonstrasikan keterampilan bekerja sama dengan tim (CP-3)</td>
-          </tr>
+          <% }) %>
           <tr class="row21">
             <td class="column0 style22 s style24" colspan="2">Deskripsi Singkat</td>
             <td class="column2 style47 s style51" colspan="11" rowspan="2">Mata kuliah pemrograman web merupakan mata kuliah yang membahas tentang teknik pengembangan website dari hulu ke hilir, yaitu mulai dari algoritma dalam pemrograman web, pembuatan website (front-end dan back-end), hosting, hingga dokumentasi dan hukum kekayaan intelektual dari program yang dihasilkan nantinya.</td>

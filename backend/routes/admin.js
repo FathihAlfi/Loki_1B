@@ -19,4 +19,6 @@ server.get('/semuaCPMKdanCPL', cekLogin, controllers.admin.semuaCPMKdanCPL)
 
 server.get('/semuaAksesDosen', cekLogin, controllers.admin.semuaAksesDosen)
 
+server.get('/detailRPS/:id/:name', cekLogin, controllers.admin.detailRPS)
+
 module.exports = server

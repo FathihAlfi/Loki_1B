@@ -425,31 +425,9 @@ body { margin-left: 0.7in; margin-right: 0.7in; margin-top: 0.75in; margin-botto
             <td class="column2 style44 s style46" colspan="4">Capaian Pembelajaran Mata Kuliah (CPMK)            </td>
             <td class="column6 style37 null style39" colspan="7"></td>
           </tr>
+          <% CPL.forEach((C, i) => { %>
           <tr class="row14">
-            <td class="column2 style2 n">1</td>
-            <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menjelaskan konsep dasar dan komponen aplikasi berbasis web (CPL-1, CPL-2)</td>
+            <td class="column2 style2 n"><%= i+1 %></td>
+            <td class="column3 style41 s style43" colspan="10"><%= C.course_lo.name %> (CPL-<%= C.curriculum_lo_id %>)</td>
           </tr>
-          <tr class="row15">
-            <td class="column2 style2 n">2</td>
-            <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menggunakan salah satu technology stack untuk membangun aplikasi berbasis web (CPL-1, CPL-2)</td>
-          </tr>
-          <tr class="row16">
-            <td class="column2 style2 n">3</td>
-            <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menggunakan pemograman asynchronous . (CPL-2, CPL-3)</td>
-          </tr>
-          <tr class="row17">
-            <td class="column2 style2 n">4</td>
-            <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menerapkan keamanan untuk situs web . (CPL-2, CPL-3)</td>
-          </tr>
-          <tr class="row18">
-            <td class="column2 style2 n">5</td>
-            <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menggunakan dan mendesain format data JSON. (CPL-2, CPL-3)</td>
-          </tr>
-          <tr class="row19">
-            <td class="column2 style2 n">6</td>
-            <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu deploy aplikasi web ke internet. (CPL-2)</td>
-          </tr>
-          <tr class="row20">
-            <td class="column2 style2 n">7</td>
-            <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu mendemonstrasikan keterampilan bekerja sama dengan tim (CPL-3)</td>
-          </tr>
+          <% } ) %>
