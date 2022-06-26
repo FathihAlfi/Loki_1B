@@ -121,7 +121,7 @@ controllers.semuaAksesDosen = async (req, res) => {
     res.render("aksesDosen", {RPS, accessToken, nama, NIP})
 }
 
-controllers.detailCPMKdanCPL = async (req, res) => {
+controllers.semuaCPMKdanCPL = async (req, res) => {
     const accessToken = req.cookies.accessToken 
     if (!accessToken)
         return res.status(200).json("tidak ada token")
@@ -134,6 +134,20 @@ controllers.detailCPMKdanCPL = async (req, res) => {
         atribute : ['rev', 'code', 'name', 'credit', 'semester']
     })
     res.render("cpmk-cpl", {RPS, accessToken, nama, NIP})
+}
+
+controllers.detailCPMKdanCPL = async (req, res) => {
+    const id = req.params.id
+    const name = req.params.name
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        return res.status(200).json("tidak ada token")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id_dosen = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
+
+    res.render("cpmk-cpl1", {})
 }
 
 module.exports = controllers
