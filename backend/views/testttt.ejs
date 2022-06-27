@@ -1,110 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
-    <table>
-        <thead>
-          <tr>
-            <th>logo</th>
-            <th colspan="5">informasi</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>mata kuliah</td>
-            <td>kode</td>
-            <td>rumpun</td>
-            <td>SKS</td>
-            <td>Semester</td>
-            <td>Tanggal Pembuatan</td>
-          </tr>
-          <tr>
-            <td>pemograman web</td>
-            <td>pweb</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td rowspan="2">otorisasi</td>
-            <td colspan="2">dosen pengembang RPS</td>
-            <td colspan="2">Koordinator</td>
-            <td>Ka program studi</td>
-          </tr>
-          <tr>
-            <td colspan="2"></td>
-            <td colspan="2"></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td rowspan="8">Capaian Pembelajaran</td>
-            <td colspan="5">CP Program Studi</td>
-          </tr>
-          <tr>
-            <td>CP-1</td>
-            <td colspan="4"></td>
-          </tr>
-          <tr>
-            <td>CP-2</td>
-            <td colspan="4"></td>
-          </tr>
-          <tr>
-            <td>CP-3</td>
-            <td colspan="4"></td>
-          </tr>
-          <tr>
-            <td colspan="5">CP Mata Kuliah</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td colspan="4">CPMK 1</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td colspan="4">CPMK 2</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td colspan="4">CPMK 3</td>
-          </tr>
-          <tr>
-            <td>Deskripsi Singkat Mata Kuliah</td>
-            <td>dede</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Materi Pembelajaran/Pokok Bahasan</td>
-            <td colspan="5">apa </td>
-          </tr>
-          <tr>
-            <td>Pustaka</td>
-            <td colspan="5">kk</td>
-          </tr>
-          <tr>
-            <td>Media Pembelajaran</td>
-            <td colspan="3">ll</td>
-            <td colspan="2">mm</td>
-          </tr>
-          <tr>
-            <td>Team Teaching</td>
-            <td colspan="5">-</td>
-          </tr>
-          <tr>
-            <td>Assessment</td>
-            <td colspan="5">Project, Tugas, Quiz, UTS, UAS</td>
-          </tr>
-          <tr>
-            <td>Mata Kuliah</td>
-            <td colspan="5">aapa</td>
-          </tr>
-        </tbody>
-        </table>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPS <%= RPS.name %> </title>
 </head>
 <body>
-    
+  <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+      overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+      font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+    .tg .tg-0lax{text-align:left;vertical-align:top}
+    </style>
+   
+    <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg-0pky">logo</th>
+        <th class="tg-0lax" colspan="5">Informasi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-0lax">Mata Kuliah</td>
+        <td class="tg-0lax">Kode</td>
+        <td class="tg-0lax">Rumpun</td>
+        <td class="tg-0lax">SKS</td>
+        <td class="tg-0lax">Semester</td>
+        <td class="tg-0lax">Tanggal Pembuatan</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax"><%= RPS.name %></td>
+        <td class="tg-0lax"><%= RPS.code %></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"><%= RPS.credit %></td>
+        <td class="tg-0lax"><%= RPS.semester %></td>
+        <td class="tg-0lax"></td>
+      </tr>
+      <tr>
+        <td class="tg-0lax" colspan="6">Otorisasi</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax" colspan="2">Dosen Pengembang RPS</td>
+        <td class="tg-0lax" colspan="2">Koordinator</td>
+        <td class="tg-0lax" colspan="2">Ka Program Studi</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax" colspan="2"></td>
+        <td class="tg-0lax" colspan="2"></td>
+        <td class="tg-0lax" colspan="2"></td>
+      </tr>
+      <tr>
+        <td class="tg-0lax" colspan="6">CP Program Studi</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">CP-1</td>
+        <td class="tg-0lax" colspan="5">Mengidentifikasi, memformulasikan dan memecahkan permasalahan kebutuhan informasi dari suatu organisasi</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">CP-2</td>
+        <td class="tg-0lax" colspan="5">Mengintegrasikan solusi berbasis teknologi informasi secara efektif pada suatu organisasi</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">CP-3</td>
+        <td class="tg-0lax" colspan="5">Menerapkan konsep-konsep dasar dalam merencanakan Sistem Informasi, merancang Sistem Informasi, membangun Sistem Informasi, mengoperasikan Sistem Informasi, dan mengevaluasi Sistem Informasi</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax" colspan="6">CP Mata Kuliah</td>
+      </tr>
+      <% CPL.forEach((C, i) => { %>
+      <tr>
+        <td class="tg-0lax"><%= i+1 %></td>
+        <td class="tg-0lax" colspan="5"><%= C.course_lo.name %> (CP-<%= C.curriculum_lo_id %>)</td>
+      </tr>
+      <% } ) %>
+      <tr>
+        <td class="tg-0lax">Deskripsi Singkat Mata Kuliah</td>
+        <td class="tg-0lax" colspan="5"><%= RPS.description %></td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Materi Pembelajaran</td>
+        <td class="tg-0lax" colspan="5"><%= RPS.material %></td>
+      </tr>
+      
+      <tr>
+        <td class="tg-0lax">Pustaka</td>
+        
+        <td class="tg-0lax" colspan="5"> <% ref.forEach((R) => { %> <%= R.author %>. <%= R.year %>. <%= R.title %>. <%= R.publisher %> <br> <% } ) %></td>
+      </tr>
+      
+      <tr>
+        <td class="tg-0lax">Team Teaching</td>
+        <td class="tg-0lax" colspan="5"></td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Assessment</td>
+        <td class="tg-0lax" colspan="5"></td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Mata Kuliah Prasyarat</td>
+        <td class="tg-0lax" colspan="5"></td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Bobot Penilaian (%) </td>
+        <td class="tg-0lax" colspan="5"><% komponen.forEach((K) => { %> <%= K.percentage %> (<%= K.name %>) <br> <% } ) %></td>
+      </tr>
+    </tbody>
+    </table>
+  
+    <style type="text/css">
+      .tg  {border-collapse:collapse;border-spacing:0;}
+      .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+        overflow:hidden;padding:10px 5px;word-break:normal;}
+      .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+        font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+      .tg .tg-baqh{text-align:center;vertical-align:top}
+      .tg .tg-0lax{text-align:left;vertical-align:top}
+      </style>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+      <table class="tg">
+      <thead>
+        <tr>
+          <th class="tg-baqh">Minggu Ke-</th>
+          <th class="tg-baqh">Metode</th>
+          <th class="tg-baqh">Pengalaman Belajar<br>Mahasiswa</th>
+        </tr>
+      </thead>
+      <br><br>
+  
+      <tbody>
+        <% pertemuan.forEach((P, i) => { %>
+        <tr>
+          <td class="tg-0lax"><%= P.week %></td>
+          <td class="tg-0lax"><%= P.method %></td>
+          <td class="tg-0lax"><%= P.student_experience %></td>
+        </tr>
+        <% } ) %>
+      </tbody>
+      </table>
+      <br>
+  
+      
+  <script type="text/javascript"> window.print() 
+    console.log("test")
+    </script>
 </body>
 </html>

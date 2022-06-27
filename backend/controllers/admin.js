@@ -207,6 +207,7 @@ controllers.detailRPS = async (req, res) => {
 }
 
 controllers.cetakRPS = async (req, res) => {
+    target="_blank"
     const id = req.params.id
     const name = req.params.name
     
@@ -239,7 +240,7 @@ controllers.cetakRPS = async (req, res) => {
     const komponen = await models.course_plan_assessments.findAll({
         where : {course_plan_id : id}
     })
-    res.render("test", {RPS, CPL, ref, pertemuan, komponen})
+    res.render("testttt", {RPS, CPL, ref, pertemuan, komponen})
 }
 
 module.exports = controllers
