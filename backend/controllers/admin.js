@@ -174,21 +174,72 @@ controllers.detailRPS = async (req, res) => {
     const id = req.params.id
     const name = req.params.name
     
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        return res.status(200).json("tidak ada token")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id_dosen = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
+
     models.course_los.hasMany(models.course_lo_details, {foreignKey : "id"})
     models.course_lo_details.belongsTo(models.course_los, {foreignKey : "course_lo_id"})
     
     const RPS = await models.course_plans.findOne({
-        where : {id : 2}
+        where : {id : id}
     })
     const CPL = await models.course_lo_details.findAll({
         include : {
             model: models.course_los,
-            where : {
-                course_plan_id : 2
-            }
+            where : {course_plan_id : id}
         }
     })
-    res.render("rpspweb", {RPS, CPL})
+    const ref = await models.course_plan_references.findAll({
+        where : {course_plan_id : id}
+    })
+    const pertemuan = await models.course_plan_details.findAll({
+        where : {course_plan_id : id}
+    })
+    const komponen = await models.course_plan_assessments.findAll({
+        where : {course_plan_id : id}
+    })
+    res.render("test", {RPS, CPL, ref, pertemuan, komponen})
+}
+
+controllers.cetakRPS = async (req, res) => {
+    const id = req.params.id
+    const name = req.params.name
+    
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        return res.status(200).json("tidak ada token")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id_dosen = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
+
+    models.course_los.hasMany(models.course_lo_details, {foreignKey : "id"})
+    models.course_lo_details.belongsTo(models.course_los, {foreignKey : "course_lo_id"})
+    
+    const RPS = await models.course_plans.findOne({
+        where : {id : id}
+    })
+    const CPL = await models.course_lo_details.findAll({
+        include : {
+            model: models.course_los,
+            where : {course_plan_id : id}
+        }
+    })
+    const ref = await models.course_plan_references.findAll({
+        where : {course_plan_id : id}
+    })
+    const pertemuan = await models.course_plan_details.findAll({
+        where : {course_plan_id : id}
+    })
+    const komponen = await models.course_plan_assessments.findAll({
+        where : {course_plan_id : id}
+    })
+    res.render("test", {RPS, CPL, ref, pertemuan, komponen})
 }
 
 module.exports = controllers
