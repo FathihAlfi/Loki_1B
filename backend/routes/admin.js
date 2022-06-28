@@ -23,4 +23,6 @@ server.get('/detailRPS/:id/:name', cekLogin, controllers.admin.detailRPS)
 
 server.get('/cetakRPS/:id/:name', cekLogin, controllers.admin.cetakRPS)
 
+server.get('/persentaseRPS', cekLogin, controllers.admin.persentaseRPS)
+
 module.exports = server
