@@ -244,7 +244,7 @@ controllers.cetakRPS = async (req, res) => {
 }
 
 controllers.persentaseRPS = async (req, res) => {
-    res.render("presentaserps")
+    res.render("persentaserps")
 }
 
 module.exports = controllers
