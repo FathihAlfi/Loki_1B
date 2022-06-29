@@ -11,10 +11,33 @@
     <%- include ('modals/headadmin') %>
     <nav>
         <div class="row no-gutters mt-5">
-         
+          <%- include ('modals/navbaradmin', {nama, NIP}) %>
             <div class="col-md-10 p-4 pt-4">
               <h3><i class="fa-solid fa-list me-2"></i>Persentase RPS</h3><hr>
-              <br>
+              <br>  
+              <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="text-center" scope="col">Keterangan</th>
+                        <th class="text-center" scope="col">Persentase</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td scope="row">Project Based </td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Case Based</td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Total</td>
+                      <td class="text-center"></td>
+                    </tr>
+              </tbody>
+              </table><br>
+              
               <div id="piechart"></div>
               <a href="/homeAdmin" class="btn btn-secondary mb-3" type="button">Kembali</a>
 
