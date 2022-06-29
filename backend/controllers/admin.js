@@ -244,7 +244,23 @@ controllers.cetakRPS = async (req, res) => {
 }
 
 controllers.persentaseRPS = async (req, res) => {
-    res.render("persentaserps")
+    const accessToken = req.cookies.accessToken 
+    if (!accessToken)
+        return res.status(200).json("tidak ada token")
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const id_dosen = payload.id
+    const nama = payload.nama
+    const NIP = payload.NIP
+
+    const RPS = await models.course_plans.count({
+        
+    })
+
+    const hitung = await models.course_plan_assessments.count({
+        where : {flag : 1}
+    })
+    // res.json({hitung})
+    res.render("persentaserps", {nama, NIP, hitung, RPS})
 }
 
 module.exports = controllers
