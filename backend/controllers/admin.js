@@ -259,8 +259,12 @@ controllers.persentaseRPS = async (req, res) => {
     const hitung = await models.course_plan_assessments.count({
         where : {flag : 1}
     })
-    res.json({RPS})
-    // res.render("persentaserps", {nama, NIP, hitung, RPS})
+    // res.json({RPS})
+    var c = RPS - hitung
+    var project = hitung/RPS*100
+    var casee = c/RPS*100
+    // res.json({casee})
+    res.render("persentaserps", {nama, NIP, hitung, RPS, project, casee})
 }
 
 module.exports = controllers
