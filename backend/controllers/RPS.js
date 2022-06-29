@@ -1,3 +1,5 @@
+//controller untuk RPS (Dosen)
+
 const models = require('../models/index')
 const jwt = require('jsonwebtoken')
 

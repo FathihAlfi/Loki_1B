@@ -1,3 +1,5 @@
+//controllers untuk KOMPONEN (dosen)
+
 const models = require('../models/index')
 const jwt = require('jsonwebtoken')
 const { json } = require('body-parser')

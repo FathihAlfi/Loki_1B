@@ -1,3 +1,5 @@
+//controller untuk LANDING PAGE (mahasiswa)
+
 const models = require('../models/index')
 
 const controllers = {}

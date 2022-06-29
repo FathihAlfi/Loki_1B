@@ -1,3 +1,5 @@
+//Controllers buat login
+
 const models = require('../models/index')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')

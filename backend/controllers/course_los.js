@@ -1,3 +1,5 @@
+//controllers untuk CPMK (dosen)
+
 const models = require('../models/index')
 const jwt = require('jsonwebtoken')
 const controllers = {}
