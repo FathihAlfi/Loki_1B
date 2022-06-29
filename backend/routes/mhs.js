@@ -6,6 +6,6 @@ server.get('/', controllers.mhs.home)
 server.get('/detail/:id', controllers.mhs.detail)
 server.get('/lihatDetailRPS/:id/:name', controllers.mhs.lihatDetailRPS)
 server.get('/exportDetailRPS/:id/:name', controllers.mhs.exportDetailRPS)
-server.post('/cariRPS/:cari')
+server.post('/cari', controllers.mhs.cari)
 
 module.exports = server

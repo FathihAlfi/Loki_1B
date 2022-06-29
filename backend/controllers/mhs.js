@@ -73,4 +73,18 @@ controllers.exportDetailRPS = async (req, res) => {
     res.render("PrintRPS", {RPS, CPL, ref, pertemuan, komponen})
 }
 
+controllers.cari = async (req, res) => {
+    cari = req.params.cari
+
+    const RPS = await models.course_plans.findOne({
+        where : {
+            [op.like] : [
+                {code : cari},
+                {name : cari}
+            ]
+        }
+    })
+    res.render("landingpage", {RPS} ) 
+}
+
 module.exports = controllers
