@@ -34,8 +34,8 @@ controllers.home = async(req, res) => {
             atribute : ['id', 'code', 'name', 'credit']
         }
     })
-    res.render("homepagedosen", {RPS, accessToken, nama, NIP} )
-    // res.json({RPS})
+    res.render("homepagedosen", {RPS, accessToken, nama, NIP} ) 
+    //res.json({RPS})
 }
 
 module.exports = controllers
