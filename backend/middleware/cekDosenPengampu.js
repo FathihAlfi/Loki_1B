@@ -1,3 +1,5 @@
+//middleware untuk cek authorization Dosen
+
 const jwt = require('jsonwebtoken')
 const models = require('../models/index')
 

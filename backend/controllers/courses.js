@@ -1,3 +1,5 @@
+//controller untuk MATAKULIAH (dosen)
+
 const models = require('../models/index')
 const controllers = {}
 

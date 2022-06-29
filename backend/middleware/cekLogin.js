@@ -1,3 +1,5 @@
+//middleware untuk cek waktu Login
+
 const jwt = require('jsonwebtoken')
 
 const verifyToken = (req, res, next) => {

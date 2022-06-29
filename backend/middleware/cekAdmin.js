@@ -1,3 +1,5 @@
+//middleware untuk cek autho admin
+
 const jwt = require('jsonwebtoken')
 const models = require('../models/index')
 

@@ -1,3 +1,5 @@
+//ini adalah database
+
 const sequalize = require('sequelize')
 
 const db = new sequalize('loki', 'root', '', {

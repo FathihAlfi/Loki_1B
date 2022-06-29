@@ -1,3 +1,5 @@
+//Controller untuk PERTEMUAN (dosen)
+
 const models = require('../models/index')
 const jwt = require('jsonwebtoken')
 const controllers = {}
