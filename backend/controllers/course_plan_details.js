@@ -33,7 +33,7 @@ controllers.semuaPertemuan = async (req, res) => {
 
 controllers.hapusPertemuan = async(req, res) => {
     try {
-        const id = req.params.id
+        const id = req.params.id //menangkap nilai id yang dikirimkan melalui url 
         const name = req.params.name
         await models.course_plan_details.destroy({
             where : {
@@ -55,7 +55,7 @@ controllers.detailPertemuan = async (req, res) => {
     const nama = payload.nama
     const NIP = payload.NIP
 
-    const id = req.params.id
+    const id = req.params.id //menangkap nilai id yang dikirimkan melalui url 
     const name = req.params.name
     const pertemuan = await models.course_plan_details.findAll({
         where : {
@@ -95,7 +95,7 @@ controllers.hlmTambahPertemuan = async (req, res) => {
     const id_dosen = payload.id
     const nama = payload.nama
     const NIP = payload.NIP
-    res.render("tambahPertemuan", {id, nama, name, NIP})
+    res.render("tambahPertemuan", {id, nama, name, NIP}) //memanggil views bernama tambah pertemuan, dimana harus membawa si id,nama,name dan nip 
 }
 
 controllers.tambahPertemuan = async (req, res) => {

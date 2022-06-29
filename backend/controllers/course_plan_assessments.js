@@ -2,7 +2,7 @@
 
 const models = require('../models/index')
 const jwt = require('jsonwebtoken')
-const { json } = require('body-parser')
+const { json } = require('body-parser') //digunakan untuk mengambil data dari form pada framework Express.
 const controllers = {}
 
 controllers.hlmTambahKomponen = async (req, res) => {
@@ -71,7 +71,6 @@ controllers.tambahKomponen = async (req, res) => {
                 name : req.body.name
             }
         })
-        // res.json ({cekKomponen})
         
         if (cekKomponen > 0)
         {
@@ -165,7 +164,6 @@ controllers.semuaKomponen = async (req, res) => {
             }]
         }]
     })
-    // res.json({komponen})
     res.render("semuaKomponen", {komponen, nama, NIP})
 }
 
