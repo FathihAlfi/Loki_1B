@@ -20,13 +20,14 @@ server.get('/tambahRPS', cekLogin, controllers.RPS.hlmTambahRPS)
 server.post('/tambahRPS', controllers.RPS.tambahRPS)
 server.put('/revisiRPS', cekDosenPengampu, controllers.RPS.revisiRPS)
 
+//semua referensi ada dsini
 server.get('/semuaRef', cekLogin, controllers.course_plan_references.semuaRef) //ref kelar semua
-server.get('/detailRef/:id/:name', cekLogin, controllers.course_plan_references.DetailRef) 
-server.get('/tambahRef/:id/:name', cekLogin, controllers.course_plan_references.hlmTambahRef)
-server.post('/tambahRef/:id/:name', cekLogin, controllers.course_plan_references.tambahRef)
-server.get('/hapusRef/:idHapus/:id/:name', cekLogin, controllers.course_plan_references.hapusRef)
-server.get('/editRef/:idEdit/:id/:name', cekLogin, controllers.course_plan_references.hlmEditRef)
-server.post('/editRef/:idEdit/:id/:name', cekLogin, controllers.course_plan_references.editRef)
+server.get('/detailRef/:id/:name', cekLogin, controllers.course_plan_references.DetailRef) //detail ref
+server.get('/tambahRef/:id/:name', cekLogin, controllers.course_plan_references.hlmTambahRef)//tampilan tambah
+server.post('/tambahRef/:id/:name', cekLogin, controllers.course_plan_references.tambahRef)//menyimpan data tambah
+server.get('/hapusRef/:idHapus/:id/:name', cekLogin, controllers.course_plan_references.hapusRef)//hapus ref
+server.get('/editRef/:idEdit/:id/:name', cekLogin, controllers.course_plan_references.hlmEditRef)//tampilan edit
+server.post('/editRef/:idEdit/:id/:name', cekLogin, controllers.course_plan_references.editRef)//menyimpan data edit
 
 server.get('/semuaKomponen', cekLogin, controllers.course_plan_assessments.semuaKomponen) //komponen kelar semua
 server.get('/detailKomponen/:id/:name', cekLogin, controllers.course_plan_assessments.detailKomponen) 

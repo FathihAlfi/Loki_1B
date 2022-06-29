@@ -1,23 +1,25 @@
 //controller untuk REFERENSI (dosen)
 
-const models = require('../models/index')
+const models = require('../models/index') //semua yang ada di models melalui index
 const jwt = require('jsonwebtoken')
 const controllers = {}
 
-controllers.hlmTambahRef = async (req, res) => {
+controllers.hlmTambahRef = async (req, res) => { //MENAMPILKAN halaman tambah ref
+    //mengambil nilai didalam url (params)
     const id = req.params.id
     const name = req.params.name
-    const accessToken = req.cookies.accessToken 
-    if (!accessToken)
+    const accessToken = req.cookies.accessToken //mengambil accestoken
+    if (!accessToken) //jika token salah
         return res.status(200).json("tidak ada token")
-    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET) //verifikasi token
     const id_dosen = payload.id
     const nama = payload.nama
     const NIP = payload.NIP
-    res.render("tambahRef", {id, name, nama, NIP})
+    res.render("tambahRef", {id, name, nama, NIP}) //tampil pada halaman tambahref
 }
 
-controllers.hlmEditRef = async (req, res) => {
+controllers.hlmEditRef = async (req, res) => { //MENAMPILKAN halaman edit referensi
+    //mengambil nilai didalam url (params)
     const id = req.params.id
     const name = req.params.name
     const idEdit = req.params.idEdit
@@ -34,10 +36,10 @@ controllers.hlmEditRef = async (req, res) => {
             id : req.params.idEdit
         }
     })
-    res.render("editReferensi", {ref, idEdit, id, name, nama, NIP})
+    res.render("editReferensi", {ref, idEdit, id, name, nama, NIP}) //tampil pada halaman editreferensi
 }
 
-controllers.editRef = async (req, res) => {
+controllers.editRef = async (req, res) => { //MENYIMPAN data referensi untuk edit
     try {
         const idEdit = req.params.idEdit
         const accessToken = req.cookies.accessToken 
@@ -66,7 +68,7 @@ controllers.editRef = async (req, res) => {
     }
 }
 
-controllers.DetailRef = async (req, res) => {
+controllers.DetailRef = async (req, res) => { //MENAMPILKAN seluruh data referensi
     const accessToken = req.cookies.accessToken 
     if (!accessToken)
         res.render("loginDosen")
@@ -85,7 +87,7 @@ controllers.DetailRef = async (req, res) => {
     res.render("referensi", {ref, name, id, nama, NIP})
 }
 
-controllers.semuaRef = async (req, res) => {
+controllers.semuaRef = async (req, res) => { //MENAMPILKAN semua referensi dari seluruh matkul
     const accessToken = req.cookies.accessToken 
     if (!accessToken)
         res.render("loginDosen")
@@ -144,7 +146,7 @@ controllers.semuaRef = async (req, res) => {
     res.render("semuaReferensi", { ref, nama, NIP})
 }
 
-controllers.tambahRef = async(req, res) => {
+controllers.tambahRef = async(req, res) => { //MENYIMPAN data referensi yang ada
     try {
         const id = req.params.id
         const name = req.params.name
@@ -162,7 +164,7 @@ controllers.tambahRef = async(req, res) => {
     }
 }
 
-controllers.hapusRef = async(req, res) => {
+controllers.hapusRef = async(req, res) => { //MENGHAPUS data referensi
     try {
         const id = req.params.id
         const name = req.params.name
@@ -177,12 +179,5 @@ controllers.hapusRef = async(req, res) => {
     }
 }
 
-controllers.updateRef = async(req, res) => {
-
-}
-
-controllers.lihatRef = async(req, res) => {
-
-}
 
 module.exports = controllers
