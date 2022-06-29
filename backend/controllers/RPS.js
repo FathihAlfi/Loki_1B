@@ -1,8 +1,10 @@
+//mengambil dari folder models dan di file index, index memangggil seluruh controllers
 const models = require('../models/index')
 const jwt = require('jsonwebtoken')
 
 const controllers = {}
 
+//req = request, res =respond
 controllers.hlmTambahRPS = async (req, res) => {
     const accessToken = req.cookies.accessToken 
     if (!accessToken)
