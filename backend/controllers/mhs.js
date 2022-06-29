@@ -1,5 +1,5 @@
 //controller untuk LANDING PAGE (mahasiswa)
-
+const { Op } = require("sequelize");
 const models = require('../models/index')
 
 const controllers = {}
@@ -76,17 +76,20 @@ controllers.exportDetailRPS = async (req, res) => {
 }
 
 controllers.cari = async (req, res) => {
-    cari = req.params.cari
+    cari = req.query.cari
 
-    const RPS = await models.course_plans.findOne({
+    const RPS = await models.course_plans.findAll({
         where : {
-            [op.like] : [
-                {code : cari},
-                {name : cari}
+            [Op.or] : [
+                {name : {[Op.like] : cari }},
+                {code : {[Op.like] : cari}}
             ]
         }
     })
-    res.render("landingpage", {RPS} ) 
+    res.render("landingpage", {RPS}) 
+    // res.json({RPS})
 }
+
+
 
 module.exports = controllers
