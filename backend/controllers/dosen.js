@@ -4,12 +4,12 @@ const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 
 const controllers = {}
-
+//manggil cookies untuk menyimpan jwt token
 controllers.home = async(req, res) => {
-   const accessToken = req.cookies.accessToken 
-    if (!accessToken)
+   const accessToken = req.cookies.accessToken //membuat var untuk meminta cookies yg bernama accesToken
+    if (!accessToken) //negasi
         return res.status(200).json("tidak ada token")
-    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
+    const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET) //decode bentuk token yg dia punya
     const id = payload.id
     const nama = payload.nama
     const NIP = payload.NIP
