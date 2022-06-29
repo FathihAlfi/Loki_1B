@@ -25,7 +25,7 @@ app.set("view engine", "ejs")
 app.use(express.static("views"))
 
 app.get('/login', controllers.auth.login)
-app.delete('/logout', controllers.auth.logout)
+app.get('/logout', controllers.auth.logout)
 app.use('/', server.mhs)
 app.use('/', server.admin)
 app.use('/', server.dosen)

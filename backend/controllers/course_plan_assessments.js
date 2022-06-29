@@ -1,3 +1,5 @@
+//controllers untuk KOMPONEN (dosen)
+
 const models = require('../models/index')
 const jwt = require('jsonwebtoken')
 const { json } = require('body-parser')
@@ -63,25 +65,41 @@ controllers.editKomponen = async (req, res) => {
 
 controllers.tambahKomponen = async (req, res) => {
     try {
-        const id = req.params.id
-        const name = req.params.name
-        if (req.body.name == "Tugas Besar"){
-            await models.course_plan_assessments.create({
-                course_plan_id  : req.params.id,
-                name            : req.body.name,
-                percentage      : req.body.percentage,
-                flag            : 1
-            })
+        const cekKomponen = await models.course_plan_assessments.count({
+            where : {
+                course_plan_id : req.params.id,
+                name : req.body.name
+            }
+        })
+        // res.json ({cekKomponen})
+        
+        if (cekKomponen > 0)
+        {
+            const id = req.params.id
+            const name = req.params.name
+            res.status(200).redirect("/detailKomponen/"+id+"/"+name)
         }
-        else{
-            await models.course_plan_assessments.create({
-                course_plan_id  : req.params.id,
-                name            : req.body.name,
-                percentage      : req.body.percentage,
-                flag            : 0
-            })
-        }
-        res.status(200).redirect("/detailKomponen/"+id+"/"+name)
+        else {
+            const id = req.params.id
+            const name = req.params.name
+            if (req.body.name == "Tugas Besar"){
+                await models.course_plan_assessments.create({
+                    course_plan_id  : req.params.id,
+                    name            : req.body.name,
+                    percentage      : req.body.percentage,
+                    flag            : 1
+                })
+            }
+            else{
+                await models.course_plan_assessments.create({
+                    course_plan_id  : req.params.id,
+                    name            : req.body.name,
+                    percentage      : req.body.percentage,
+                    flag            : 0
+                })
+            }
+            res.status(200).redirect("/detailKomponen/"+id+"/"+name)
+            }
     } catch (err) {
         console.log(err);
         res.json({err})

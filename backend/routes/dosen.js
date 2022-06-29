@@ -1,3 +1,5 @@
+//routes > controller - Middleware untuk Dosen
+
 const express = require('express')
 const server = express.Router()
 const controllers = require('../controllers/index.js')

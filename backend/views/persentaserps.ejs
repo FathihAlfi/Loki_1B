@@ -11,32 +11,41 @@
     <%- include ('modals/headadmin') %>
     <nav>
         <div class="row no-gutters mt-5">
-         
+          <%- include ('modals/navbaradmin', {nama, NIP}) %>
             <div class="col-md-10 p-4 pt-4">
               <h3><i class="fa-solid fa-list me-2"></i>Persentase RPS</h3><hr>
-              <div class="container">
-                  <div class="row">
-                      <div class="col-2"><h6>Tahun Akademik</h6></div>
-                      <div class="col-2"><h6>: 2021/2022</h6></div>
-                    </div>
-                  <div class="row">
-                      <div class="col-2"><h6>Semester</h6></div>
-                      <div class="col-3"><h6>: Genap</h6></div>
-                    </div><br>
-              </div>
-              <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Masukkan Nama/Kode Mata Kuliah" aria-label="Search">
-                  <button class="btn btn-outline-dark" type="submit">Cari</button>
-              </form><br>
-              <div class="row">
-                <div class="col-2"><h6>Mata Kuliah</h6></div>
-              </div><br>
+              <br>  
+              <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="text-center" scope="col">Keterangan</th>
+                        <th class="text-center" scope="col">Persentase</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td scope="row">Project Based </td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Case Based</td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Total</td>
+                      <td class="text-center"></td>
+                    </tr>
+              </tbody>
+              </table><br>
+              
               <div id="piechart"></div>
               <a href="/homeAdmin" class="btn btn-secondary mb-3" type="button">Kembali</a>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
+
 <script type="text/javascript">
+  
 // Load google charts
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
@@ -46,8 +55,7 @@ function drawChart() {
   var data = google.visualization.arrayToDataTable([
   ['Task', 'Hours per Day'],
   ['Project Based', 8],
-  ['Case Based Method', 2],
-  
+  ['Case Based Method', 2], 
 ]);
 
   // Optional; add a title and set the width and height of the chart
