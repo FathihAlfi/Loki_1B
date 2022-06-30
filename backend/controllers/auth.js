@@ -16,7 +16,7 @@ controllers.loginAdmin = async (req, res) => {
         {
             const cekNIP = await models.lecturers.findOne({
                 where : {
-                    reg_id : req.body.NIP
+                    reg_id : req.body.NIP 
                 }
             })
             if (!cekNIP)
