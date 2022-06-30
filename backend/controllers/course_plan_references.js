@@ -12,7 +12,7 @@ controllers.hlmTambahRef = async (req, res) => { //MENAMPILKAN halaman tambah re
     if (!accessToken) //jika token salah
         return res.status(200).json("tidak ada token")
     const payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET) //verifikasi token
-    const id_dosen = payload.id
+    const id_dosen = payload.id 
     const nama = payload.nama
     const NIP = payload.NIP
     res.render("tambahRef", {id, name, nama, NIP}) //tampil pada halaman tambahref
