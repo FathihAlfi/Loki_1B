@@ -19,7 +19,6 @@
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th class="text-center" scope="col">No</th>
                                     <th class="text-center" scope="col">Minggu Pertemuan</th>
                                     <th class="text-center" scope="col">Materi</th>
                                     <th class="text-center" scope="col">Metode</th>
@@ -29,8 +28,7 @@
                             <body>
                                 <% pertemuan.forEach((P, i) => { %>
                                 <tr>
-                                    <td class="text-center" scope="col"><%= i+1 %></td>
-                                    <td scope="col"><%= P.week %></td>
+                                    <td class="text-center" scope="col"><%= P.week %></td>
                                     <td scope="col"><%= P.material %></td>
                                     <td scope="col"><%= P.method %></td>
                                     <td scope="col"><%= P.student_experience %></td>

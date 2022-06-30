@@ -166,8 +166,8 @@ controllers.tambahRef = async(req, res) => { //MENYIMPAN data referensi yang ada
 
 controllers.hapusRef = async(req, res) => { //MENGHAPUS data referensi
     try {
-        const id = req.params.id
-        const name = req.params.name
+        const id = req.params.id //menangkap nilai id yang dikirimkan melalui url 
+        const name = req.params.name 
         await models.course_plan_references.destroy({
             where : {
                 id   : req.params.idHapus
